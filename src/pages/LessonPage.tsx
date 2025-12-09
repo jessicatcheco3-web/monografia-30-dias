@@ -3,12 +3,12 @@ import {
   ArrowLeft, 
   ArrowRight, 
   Home, 
-  Clock, 
   CheckCircle2,
   FileText,
   Sparkles,
   Copy,
-  Check
+  Check,
+  BookOpen
 } from "lucide-react";
 import { useState } from "react";
 import { modules } from "@/data/courseData";
@@ -24,14 +24,11 @@ export default function LessonPage() {
   const [copiedPrompt, setCopiedPrompt] = useState<string | null>(null);
   const [checkedItems, setCheckedItems] = useState<Record<string, boolean>>({});
 
-  const module = modules.find(m => m.id === moduleId);
-  const lesson = module?.lessons.find(l => l.id === lessonId);
-  const content = lessonId ? getLessonContent(lessonId) : undefined;
+  const lessonData = moduleId && lessonId ? getLessonContent(moduleId, lessonId) : null;
+  const nextLesson = moduleId && lessonId ? getNextLesson(moduleId, lessonId) : null;
+  const prevLesson = moduleId && lessonId ? getPreviousLesson(moduleId, lessonId) : null;
 
-  const nextLesson = lessonId ? getNextLesson(lessonId, modules) : null;
-  const prevLesson = lessonId ? getPreviousLesson(lessonId, modules) : null;
-
-  if (!module || !lesson) {
+  if (!lessonData) {
     return (
       <div className="max-w-4xl mx-auto text-center py-12">
         <h1 className="text-2xl font-bold text-foreground mb-4">Aula não encontrada</h1>
@@ -42,9 +39,12 @@ export default function LessonPage() {
     );
   }
 
-  const copyPrompt = (prompt: string, title: string) => {
+  const { module, lesson } = lessonData;
+  const lessonIndex = module.lessons.findIndex(l => l.id === lessonId);
+
+  const copyPrompt = (prompt: string, index: number) => {
     navigator.clipboard.writeText(prompt);
-    setCopiedPrompt(title);
+    setCopiedPrompt(String(index));
     toast.success("Prompt copiado para a área de transferência!");
     setTimeout(() => setCopiedPrompt(null), 2000);
   };
@@ -55,8 +55,6 @@ export default function LessonPage() {
       [item]: !prev[item]
     }));
   };
-
-  const lessonIndex = module.lessons.findIndex(l => l.id === lessonId);
 
   return (
     <div className="max-w-4xl mx-auto space-y-8">
@@ -101,27 +99,23 @@ export default function LessonPage() {
         </h1>
         
         <p className="text-lg text-muted-foreground">
-          {lesson.description}
+          {lesson.shortDescription}
         </p>
         
         <div className="flex flex-wrap items-center gap-3">
-          <span className="flex items-center gap-1.5 text-sm text-muted-foreground bg-muted px-3 py-1.5 rounded-full">
-            <Clock size={14} />
-            {lesson.duration}
-          </span>
-          {lesson.hasTemplate && (
+          {lesson.pdfSections.length > 0 && (
             <Badge variant="outline">
               <FileText size={12} className="mr-1" />
-              Modelo Disponível
+              PDF Disponível
             </Badge>
           )}
-          {lesson.hasChecklist && (
+          {lesson.checklist.length > 0 && (
             <Badge variant="outline">
               <CheckCircle2 size={12} className="mr-1" />
               Checklist
             </Badge>
           )}
-          {lesson.hasPrompts && (
+          {lesson.iaPrompts.length > 0 && (
             <Badge variant="outline">
               <Sparkles size={12} className="mr-1" />
               Prompts IA
@@ -131,32 +125,41 @@ export default function LessonPage() {
       </div>
 
       {/* Main Content */}
-      {content && (
-        <Card>
-          <CardContent className="pt-6">
-            <div className="prose prose-slate dark:prose-invert max-w-none">
-              <div 
-                className="lesson-content"
-                dangerouslySetInnerHTML={{ 
-                  __html: content.content
-                    .replace(/^## /gm, '<h2 class="text-2xl font-bold text-foreground mt-8 mb-4">')
-                    .replace(/^### /gm, '<h3 class="text-xl font-semibold text-foreground mt-6 mb-3">')
-                    .replace(/^#### /gm, '<h4 class="text-lg font-medium text-foreground mt-4 mb-2">')
-                    .replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold text-foreground">$1</strong>')
-                    .replace(/^- /gm, '<li class="ml-4">')
-                    .replace(/^(\d+)\. /gm, '<li class="ml-4">')
-                    .replace(/\n\n/g, '</p><p class="mb-4 text-muted-foreground leading-relaxed">')
-                    .replace(/^> /gm, '<blockquote class="border-l-4 border-primary pl-4 py-2 bg-muted/50 rounded-r-lg my-4 italic">')
-                    .replace(/\| /g, '</td><td class="border border-border px-3 py-2">')
-                }}
-              />
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <BookOpen className="text-primary" size={20} />
+            Conteúdo da Aula
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="prose prose-slate dark:prose-invert max-w-none">
+            <div className="whitespace-pre-line text-muted-foreground leading-relaxed">
+              {lesson.lessonBody}
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Exercise */}
+      {lesson.exercise && (
+        <Card className="border-primary/20 bg-primary/5">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <FileText className="text-primary" size={20} />
+              Exercício Prático
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="whitespace-pre-line text-foreground">
+              {lesson.exercise}
             </div>
           </CardContent>
         </Card>
       )}
 
       {/* Checklist */}
-      {content?.checklist && content.checklist.length > 0 && (
+      {lesson.checklist.length > 0 && (
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
@@ -166,7 +169,7 @@ export default function LessonPage() {
           </CardHeader>
           <CardContent>
             <div className="space-y-3">
-              {content.checklist.map((item, index) => (
+              {lesson.checklist.map((item, index) => (
                 <div 
                   key={index} 
                   className="flex items-start gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors cursor-pointer"
@@ -186,40 +189,8 @@ export default function LessonPage() {
         </Card>
       )}
 
-      {/* Templates */}
-      {content?.templates && content.templates.length > 0 && (
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <FileText className="text-primary" size={20} />
-              Modelos Disponíveis
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="grid gap-4">
-              {content.templates.map((template, index) => (
-                <div 
-                  key={index}
-                  className="flex items-center justify-between p-4 bg-muted/50 rounded-lg"
-                >
-                  <div>
-                    <h4 className="font-medium text-foreground">{template.title}</h4>
-                    <p className="text-sm text-muted-foreground">{template.description}</p>
-                  </div>
-                  <Link to="/recursos">
-                    <Button variant="outline" size="sm">
-                      Ver Recursos
-                    </Button>
-                  </Link>
-                </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
-      )}
-
       {/* Prompts */}
-      {content?.prompts && content.prompts.length > 0 && (
+      {lesson.iaPrompts.length > 0 && (
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
@@ -232,20 +203,20 @@ export default function LessonPage() {
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
-              {content.prompts.map((prompt, index) => (
+              {lesson.iaPrompts.map((prompt, index) => (
                 <div 
                   key={index}
                   className="p-4 bg-muted/50 rounded-lg border border-border"
                 >
                   <div className="flex items-start justify-between gap-4 mb-2">
-                    <h4 className="font-medium text-foreground">{prompt.title}</h4>
+                    <h4 className="font-medium text-foreground">Prompt {index + 1}</h4>
                     <Button 
                       variant="ghost" 
                       size="sm"
                       className="shrink-0"
-                      onClick={() => copyPrompt(prompt.prompt, prompt.title)}
+                      onClick={() => copyPrompt(prompt, index)}
                     >
-                      {copiedPrompt === prompt.title ? (
+                      {copiedPrompt === String(index) ? (
                         <Check size={16} className="text-green-500" />
                       ) : (
                         <Copy size={16} />
@@ -253,7 +224,7 @@ export default function LessonPage() {
                     </Button>
                   </div>
                   <p className="text-sm text-muted-foreground font-mono bg-background p-3 rounded border">
-                    {prompt.prompt}
+                    {prompt}
                   </p>
                 </div>
               ))}
@@ -292,7 +263,7 @@ export default function LessonPage() {
         ) : (
           <Link to="/">
             <Button className="gap-2">
-              Concluir Curso
+              Concluir Módulo
               <CheckCircle2 size={16} />
             </Button>
           </Link>

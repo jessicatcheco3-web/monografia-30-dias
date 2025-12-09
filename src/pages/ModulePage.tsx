@@ -1,7 +1,7 @@
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, Home, Clock, FileText, CheckSquare, Sparkles, Play } from "lucide-react";
+import { ArrowLeft, Home, FileText, CheckSquare, Sparkles, Play } from "lucide-react";
 import { modules } from "@/data/courseData";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
@@ -67,66 +67,63 @@ export default function ModulePage() {
           Aulas deste Módulo
         </h2>
         
-        <div className="space-y-4">
-          {module.lessons.map((lesson, index) => (
-            <Link key={lesson.id} to={`/modulo/${module.id}/aula/${lesson.id}`}>
-              <Card className="hover:shadow-lg transition-all hover:-translate-y-0.5 cursor-pointer group">
-                <CardContent className="py-6">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                      <span className="text-primary font-bold text-lg">{index + 1}</span>
-                    </div>
-                    
-                    <div className="flex-1 min-w-0">
-                      <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors">
-                        {lesson.title}
-                      </h3>
-                      <p className="text-muted-foreground text-sm mt-1">
-                        {lesson.description}
-                      </p>
-                      
-                      <div className="flex flex-wrap items-center gap-3 mt-3">
-                        <span className="flex items-center gap-1 text-sm text-muted-foreground">
-                          <Clock size={14} />
-                          {lesson.duration}
-                        </span>
-                        
-                        {lesson.hasVideo && (
-                          <Badge variant="outline" className="text-xs">
-                            <Play size={12} className="mr-1" />
-                            Vídeo
-                          </Badge>
-                        )}
-                        {lesson.hasTemplate && (
-                          <Badge variant="outline" className="text-xs">
-                            <FileText size={12} className="mr-1" />
-                            Modelo
-                          </Badge>
-                        )}
-                        {lesson.hasChecklist && (
-                          <Badge variant="outline" className="text-xs">
-                            <CheckSquare size={12} className="mr-1" />
-                            Checklist
-                          </Badge>
-                        )}
-                        {lesson.hasPrompts && (
-                          <Badge variant="outline" className="text-xs">
-                            <Sparkles size={12} className="mr-1" />
-                            Prompts
-                          </Badge>
-                        )}
+        {module.lessons.length === 0 ? (
+          <Card>
+            <CardContent className="py-8 text-center">
+              <p className="text-muted-foreground">Conteúdo em breve...</p>
+            </CardContent>
+          </Card>
+        ) : (
+          <div className="space-y-4">
+            {module.lessons.map((lesson, index) => (
+              <Link key={lesson.id} to={`/modulo/${module.id}/aula/${lesson.id}`}>
+                <Card className="hover:shadow-lg transition-all hover:-translate-y-0.5 cursor-pointer group">
+                  <CardContent className="py-6">
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                        <span className="text-primary font-bold text-lg">{index + 1}</span>
                       </div>
+                      
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors">
+                          {lesson.title}
+                        </h3>
+                        <p className="text-muted-foreground text-sm mt-1">
+                          {lesson.shortDescription}
+                        </p>
+                        
+                        <div className="flex flex-wrap items-center gap-3 mt-3">
+                          {lesson.pdfSections.length > 0 && (
+                            <Badge variant="outline" className="text-xs">
+                              <FileText size={12} className="mr-1" />
+                              PDF
+                            </Badge>
+                          )}
+                          {lesson.checklist.length > 0 && (
+                            <Badge variant="outline" className="text-xs">
+                              <CheckSquare size={12} className="mr-1" />
+                              Checklist
+                            </Badge>
+                          )}
+                          {lesson.iaPrompts.length > 0 && (
+                            <Badge variant="outline" className="text-xs">
+                              <Sparkles size={12} className="mr-1" />
+                              Prompts
+                            </Badge>
+                          )}
+                        </div>
+                      </div>
+                      
+                      <Button variant="ghost" size="sm" className="opacity-0 group-hover:opacity-100 transition-opacity">
+                        Abrir
+                      </Button>
                     </div>
-                    
-                    <Button variant="ghost" size="sm" className="opacity-0 group-hover:opacity-100 transition-opacity">
-                      Abrir
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            </Link>
-          ))}
-        </div>
+                  </CardContent>
+                </Card>
+              </Link>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* Start Button */}
