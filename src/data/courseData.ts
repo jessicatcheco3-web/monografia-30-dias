@@ -734,28 +734,678 @@ Guarda esta lista para utilizá-la na construção do referencial teórico.`,
     id: "modulo-2",
     number: 2,
     title: "Elementos Textuais",
-    description: "Construindo o corpo da sua monografia com introdução, referencial teórico, metodologia, resultados e conclusão.",
+    description: "Neste módulo, o estudante aprende a estrutura interna da monografia: introdução, capítulos do referencial teórico, metodologia, resultados, discussão e considerações finais. O foco é compreender o papel de cada parte e saber o que escrever em cada uma delas.",
     icon: "📝",
     color: "from-emerald-500 to-green-600",
-    lessons: [],
+    lessons: [
+      {
+        id: "et01",
+        title: "O que são Elementos Textuais",
+        shortDescription: "Compreender a divisão básica da monografia em introdução, desenvolvimento e considerações finais.",
+        lessonBody: `Os elementos textuais correspondem ao "miolo" da monografia: a parte em que o estudante apresenta o problema, as bases teóricas, a metodologia, os resultados, as discussões e as considerações finais.
+
+De forma geral, os elementos textuais são organizados em:
+• Introdução;
+• Desenvolvimento (capítulos teóricos e metodológicos, apresentação dos resultados e discussões);
+• Considerações finais.
+
+Antes de escrever, é importante ter uma visão clara desta estrutura. Assim, cada parte cumpre uma função específica e o texto flui com mais lógica.`,
+        videoScript: `Nesta aula, vamos olhar para a estrutura interna da monografia: os elementos textuais.
+
+É aqui que a pesquisa realmente aparece em texto: começamos pela introdução, seguimos pelos capítulos de desenvolvimento, apresentamos os resultados, comentamos as discussões e fechamos com as considerações finais. Quando compreendes a função de cada parte, fica muito mais fácil decidir o que escrever e em que ordem.
+
+O objetivo desta aula é dar-te uma visão panorâmica da estrutura, para que possas organizar as tuas ideias com segurança.`,
+        pdfTitle: "Aula ET01 – Elementos Textuais da Monografia",
+        pdfSections: [
+          { heading: "Visão Geral", body: `Os elementos textuais concentram o conteúdo principal da pesquisa. Neles, o estudante apresenta o contexto do problema, fundamenta teoricamente o estudo, descreve a metodologia, apresenta e discute resultados e encerra com as considerações finais.` },
+          { heading: "Partes Principais", body: `• Introdução – apresenta o tema, o problema, os objetivos e a justificativa;
+• Desenvolvimento – reúne referencial teórico, metodologia, resultados e discussões;
+• Considerações finais – retomam objetivos, sintetizam resultados e apontam limites e possibilidades.` },
+        ],
+        iaPrompts: [
+          "Explique, de forma resumida, a diferença entre elementos pré-textuais, textuais e pós-textuais de uma monografia.",
+          "Liste, em tópicos, as partes que normalmente compõem os elementos textuais de um TCC.",
+          "Sugira uma ordem lógica para apresentar introdução, capítulos teóricos, metodologia, resultados, discussões e considerações finais."
+        ],
+        exercise: `Desenha um esquema simples em forma de lista ou quadro, indicando:
+
+• Introdução – o que pretendes colocar;
+• Desenvolvimento – possíveis capítulos;
+• Considerações finais – o que imaginas concluir.
+
+Guarda esse esquema como mapa inicial dos elementos textuais do teu trabalho.`,
+        checklist: [
+          "Entendi o que são elementos textuais.",
+          "Compreendi a divisão em introdução, desenvolvimento e considerações finais.",
+          "Organizei um rascunho de esquema para os elementos textuais do meu TCC."
+        ],
+      },
+      {
+        id: "et02",
+        title: "Introdução Nota 10",
+        shortDescription: "Aprender a estruturar uma introdução clara, completa e ligada ao projeto.",
+        lessonBody: `A introdução é o cartão de visita da monografia. Ela apresenta ao leitor o tema, o contexto, o problema, os objetivos, a justificativa e, de forma sintética, a metodologia.
+
+Um roteiro útil de introdução inclui:
+• Apresentação do tema e do contexto;
+• Formulação do problema de pesquisa;
+• Indicação dos objetivos;
+• Comentários sobre a relevância do estudo;
+• Breve descrição da metodologia e da estrutura do trabalho.
+
+A introdução deve ser escrita com clareza, evitando detalhes excessivos que serão aprofundados nos capítulos seguintes.`,
+        videoScript: `Nesta aula, vamos aprender a escrever uma introdução que realmente apresenta o teu trabalho com clareza.
+
+A ideia é seguir um roteiro simples: começar pelo contexto e pelo tema, depois apresentar o problema de pesquisa, indicar os objetivos, justificar a importância do estudo e, por fim, explicar de forma breve como o trabalho está organizado.
+
+Quando respeitamos essa sequência, o leitor entende rapidamente o que será tratado e qual a lógica da monografia. Vamos montar esse roteiro juntos.`,
+        pdfTitle: "Aula ET02 – Como Elaborar a Introdução",
+        pdfSections: [
+          { heading: "Função da Introdução", body: `A introdução situa o leitor, apresentando o tema, o problema, os objetivos, a importância do estudo e a forma geral como o trabalho está organizado.` },
+          { heading: "Roteiro Sugerido", body: `1. Apresentar o tema e o contexto;
+2. Indicar o problema de pesquisa;
+3. Apresentar o objetivo geral e os específicos;
+4. Apontar a relevância;
+5. Explicar de forma breve a metodologia e a estrutura dos capítulos.` },
+          { heading: "Dicas de Escrita", body: `Mantém a introdução coesa, evita repetir linhas inteiras da justificativa ou do referencial teórico e utiliza transições suaves entre os parágrafos.` },
+        ],
+        iaPrompts: [
+          "Com base no seguinte tema e problema [insere tema e problema], sugira um esboço de parágrafos para a introdução da monografia.",
+          "Revisa o texto de introdução abaixo, apontando onde posso melhorar a clareza e a sequência lógica: [cola a tua introdução].",
+          "Sugira frases de ligação entre parágrafos para uma introdução de TCC."
+        ],
+        exercise: `Com o teu tema, problema e objetivos já definidos, escreve um rascunho de introdução seguindo o roteiro:
+
+1. Contexto e tema;
+2. Problema de pesquisa;
+3. Objetivos;
+4. Relevância;
+5. Estrutura do trabalho.
+
+Depois, lê em voz alta para verificar se a sequência faz sentido.`,
+        checklist: [
+          "Escrevi um rascunho de introdução para o meu TCC.",
+          "Incluí tema, problema, objetivos, relevância e estrutura do trabalho.",
+          "Verifiquei se a introdução está coerente com o projeto."
+        ],
+      },
+      {
+        id: "et03",
+        title: "Referencial Teórico",
+        shortDescription: "Entender a função do referencial teórico e como organizar autores e conceitos.",
+        lessonBody: `O referencial teórico é a parte em que o estudante apresenta as principais teorias, conceitos e estudos relacionados ao tema. Ele mostra que o trabalho está apoiado em conhecimento já produzido.
+
+Um bom referencial teórico:
+• Apresenta conceitos relevantes;
+• Dialoga com diferentes autores;
+• Evita longas cópias e preferências pessoais exageradas;
+• Mantém ligação constante com o problema de pesquisa.
+
+Mais do que resumir textos, o estudante precisa relacionar ideias, comparar abordagens e destacar o que é mais importante para o seu tema.`,
+        videoScript: `Nesta aula, vamos falar sobre o referencial teórico, a base de conhecimento que sustenta o teu TCC.
+
+O objetivo aqui não é apenas resumir livros ou artigos, mas mostrar que conheces a discussão teórica sobre o teu tema, relacionando autores e ideias. Vais aprender a selecionar conceitos, organizar subtópicos e apresentar o conteúdo com as tuas próprias palavras.
+
+Um bom referencial teórico fortalece toda a tua argumentação e mostra maturidade académica.`,
+        pdfTitle: "Aula ET03 – Referencial Teórico",
+        pdfSections: [
+          { heading: "Função", body: `O referencial teórico sustenta a análise do problema, apresentando conceitos, categorias e discussões já produzidas sobre o tema, em diálogo com diferentes autores.` },
+          { heading: "Escolha de Autores", body: `Selecciona autores que sejam relevantes, atualizados e reconhecidos na área. Procura diferentes perspectivas, evitando depender apenas de uma fonte.` },
+          { heading: "Forma de Escrita", body: `Apresenta as ideias com as tuas palavras, citando correctamente as fontes. Usa citações diretas apenas quando necessário e evita parágrafos extensos de transcrição.` },
+        ],
+        iaPrompts: [
+          "Sugira uma organização em subtópicos para o referencial teórico com base neste tema: [insere tema].",
+          "Ajude-me a reescrever este parágrafo do referencial teórico para ficar mais claro, mantendo a ideia principal e a citação: [cola o parágrafo].",
+          "Liste perguntas que eu possa usar ao ler um artigo para decidir se ele entra ou não no meu referencial teórico."
+        ],
+        exercise: `Escolhe duas ou três fontes já selecionadas sobre o teu tema e escreve um parágrafo de referencial teórico, com pelo menos uma citação, utilizando as tuas próprias palavras.
+
+Marca as partes em que estás a interpretar e as partes que correspondem diretamente às ideias do autor.`,
+        checklist: [
+          "Entendi a função do referencial teórico.",
+          "Identifiquei autores importantes para o meu tema.",
+          "Produzi ao menos um parágrafo de referencial teórico com citação adequada."
+        ],
+      },
+      {
+        id: "et04",
+        title: "Definindo os Capítulos do Referencial Teórico",
+        shortDescription: "Organizar o referencial teórico em tópicos e subtópicos coerentes.",
+        lessonBody: `Depois de selecionar as principais leituras, é necessário decidir como organizar o referencial teórico em capítulos e subtópicos.
+
+Uma estratégia é:
+• Começar com conceitos mais gerais;
+• Em seguida, apresentar teorias específicas;
+• Por fim, aproximar a discussão do contexto do teu problema.
+
+Cada capítulo ou seção deve ter um foco claro, evitando misturar temas em excesso no mesmo espaço.`,
+        videoScript: `Se tens vários textos sobre o teu tema, talvez te sintas perdido sobre onde cada ideia deve entrar. É aqui que a organização dos capítulos do referencial teórico se torna fundamental.
+
+Nesta aula, vamos aprender a transformar a lista de leituras em uma estrutura de subtítulos. Vamos partir dos conceitos mais amplos e avançar para aspectos mais específicos, até chegar na realidade do teu problema de pesquisa.
+
+Uma boa organização facilita tanto a escrita quanto a leitura.`,
+        pdfTitle: "Aula ET04 – Organização dos Capítulos do Referencial",
+        pdfSections: [
+          { heading: "Estratégias de Organização", body: `Organiza os tópicos do referencial teórico de forma lógica: do geral para o específico, por temas, por abordagens teóricas ou por blocos relacionados ao problema.` },
+          { heading: "Rascunho de Estrutura", body: `Elabora um índice provisório com capítulos e subtópicos. Este rascunho pode ser ajustado conforme novas leituras forem sendo incorporadas.` },
+        ],
+        iaPrompts: [
+          "Com base nesta lista de conceitos e autores [insere lista], sugira uma possível estrutura de capítulos para o meu referencial teórico.",
+          "Reorganize os tópicos a seguir em uma ordem lógica do geral para o específico: [lista de tópicos].",
+          "Sugira títulos de subtópicos claros para o referencial teórico na área de [tua área]."
+        ],
+        exercise: `Cria um índice provisório do teu referencial teórico, com pelo menos dois capítulos principais e dois ou três subtópicos em cada um.
+
+Verifica se a ordem faz sentido e se cada parte contribui para entender o problema de pesquisa.`,
+        checklist: [
+          "Listei os principais temas e conceitos do meu referencial teórico.",
+          "Organizei estes temas em capítulos e subtópicos.",
+          "Tenho um índice provisório para o referencial teórico."
+        ],
+      },
+      {
+        id: "et05",
+        title: "Metodologia – Parte 1",
+        shortDescription: "Entender os componentes básicos da metodologia de pesquisa.",
+        lessonBody: `A metodologia descreve como a pesquisa será ou foi realizada. Ela explica o tipo de estudo, a abordagem, o público ou documentos analisados, os instrumentos utilizados e a forma de tratamento dos dados.
+
+Elementos comuns da metodologia:
+• Abordagem (qualitativa, quantitativa ou mista);
+• Tipo de pesquisa (exploratória, descritiva, explicativa, estudo de caso, entre outros);
+• Participantes ou fontes de dados;
+• Instrumentos de recolha (questionários, entrevistas, análise documental, etc.);
+• Procedimentos de análise.
+
+A metodologia precisa ser coerente com o problema e com os objetivos.`,
+        videoScript: `Nesta aula, vamos compreender a estrutura básica da metodologia.
+
+A pergunta central é: como pretendes responder ao teu problema de pesquisa? A metodologia é a parte em que explicas a abordagem, o tipo de estudo, quem ou o que será analisado, que instrumentos serão utilizados e como os dados serão tratados.
+
+Com uma metodologia clara, o leitor consegue entender os caminhos que seguiste e avaliar a consistência do teu trabalho.`,
+        pdfTitle: "Aula ET05 – Fundamentos de Metodologia",
+        pdfSections: [
+          { heading: "Papel da Metodologia", body: `A metodologia mostra o caminho da pesquisa. Ela deve ser suficientemente clara para que outro investigador entenda como o estudo foi conduzido.` },
+          { heading: "Componentes Comuns", body: `Abordagem, tipo de pesquisa, participantes ou fontes de dados, instrumentos e procedimentos de recolha e análise.` },
+        ],
+        iaPrompts: [
+          "Explique de forma simples a diferença entre abordagem qualitativa e quantitativa.",
+          "Com base neste problema e objetivos [insere texto], sugira um tipo de pesquisa e uma abordagem adequados.",
+          "Ajude-me a descrever, em um parágrafo, quem serão os participantes ou as fontes de dados do meu estudo."
+        ],
+        exercise: `Com base no teu problema e nos teus objetivos, escreve um parágrafo indicando:
+
+• A abordagem da tua pesquisa;
+• O tipo de estudo;
+• Quem ou o que será analisado.
+
+Este será o início da tua secção de metodologia.`,
+        checklist: [
+          "Entendi o papel da metodologia no TCC.",
+          "Defini uma abordagem e um tipo de estudo compatíveis com o meu problema.",
+          "Rascunhei a descrição dos participantes ou fontes de dados."
+        ],
+      },
+      {
+        id: "et06",
+        title: "Metodologia Simplificada",
+        shortDescription: "Adequar a metodologia a trabalhos com menor complexidade, mantendo clareza.",
+        lessonBody: `Em muitos cursos de graduação, a metodologia não precisa ser extremamente complexa. O importante é que seja clara, coerente com o problema e possível de executar.
+
+Uma metodologia simplificada pode:
+• Focar em análise documental;
+• Utilizar um estudo de caso único;
+• Basear-se em revisão de literatura;
+• Descrever procedimentos de forma objetiva, sem jargões excessivos.
+
+Em vez de decorar termos, o estudante deve preocupar-se em explicar o que fez ou fará, de maneira compreensível.`,
+        videoScript: `Nem toda monografia exige uma metodologia muito extensa. Em vários casos, uma descrição clara e direta do que foi feito é o suficiente.
+
+Nesta aula, vamos ver como adaptar a metodologia ao nível do teu curso, utilizando linguagem simples e explicando, sem complicação, como os dados serão recolhidos e analisados.
+
+O mais importante é que a metodologia combine com o problema, os objetivos e os recursos que realmente tens à disposição.`,
+        pdfTitle: "Aula ET06 – Metodologia Simplificada",
+        pdfSections: [
+          { heading: "Quando Simplificar", body: `É possível simplificar a metodologia quando o estudo tem escopo limitado, utiliza poucas fontes ou concentra-se em revisão de literatura ou estudo de caso.` },
+          { heading: "Clareza Acima de Jargões", body: `Mais importante do que termos complexos é explicar com precisão o que será feito, em que ordem e com que materiais ou participantes.` },
+        ],
+        iaPrompts: [
+          "Transforme o seguinte texto metodológico rebuscado em uma versão mais simples e clara: [cola o texto].",
+          "Sugira uma metodologia simplificada para um TCC baseado apenas em revisão de literatura na área de [tua área].",
+          "Explique, em linguagem acessível, o que é um estudo de caso."
+        ],
+        exercise: `Revê o parágrafo de metodologia que escreveste na aula anterior e tenta simplificá-lo, removendo palavras desnecessárias e deixando o texto mais directo, sem perder a informação essencial.`,
+        checklist: [
+          "Percebi que posso escrever metodologia em linguagem simples.",
+          "Ajustei o meu texto metodológico para ficar mais claro.",
+          "Tenho uma versão da metodologia compatível com o nível do meu TCC."
+        ],
+      },
+      {
+        id: "et07",
+        title: "Resultados",
+        shortDescription: "Aprender a apresentar dados ou achados de forma organizada.",
+        lessonBody: `A secção de resultados apresenta o que foi encontrado na pesquisa. Dependendo do tipo de estudo, os resultados podem aparecer em tabelas, gráficos, quadros ou descrições textuais.
+
+Características importantes:
+• Organização lógica;
+• Linguagem objetiva;
+• Separação entre descrição de resultados e interpretação (que virá na discussão).
+
+Mesmo em trabalhos baseados em revisão de literatura, é possível apresentar resultados, como sínteses de autores, categorias encontradas ou tendências identificadas.`,
+        videoScript: `Chegou o momento de mostrar o que a tua pesquisa encontrou.
+
+Na secção de resultados, deves apresentar os dados ou achados de forma organizada e clara. Não é o lugar de interpretar profundamente; essa parte fica para a discussão. Aqui, o foco é mostrar, com honestidade, o que apareceu quando aplicaste a metodologia.
+
+Vamos ver formas simples de apresentar resultados, tanto em estudos empíricos quanto em revisões de literatura.`,
+        pdfTitle: "Aula ET07 – Apresentação de Resultados",
+        pdfSections: [
+          { heading: "Função da Secção de Resultados", body: `Esta secção mostra de forma objetiva o que foi encontrado na pesquisa, permitindo que o leitor acompanhe as informações antes de ler as interpretações.` },
+          { heading: "Formas de Apresentação", body: `Resultados podem ser apresentados por meio de tabelas, gráficos, quadros ou texto corrido, desde que haja organização e clareza.` },
+        ],
+        iaPrompts: [
+          "Sugira maneiras de apresentar, em texto, resultados obtidos por meio de entrevistas qualitativas.",
+          "Ajude-me a transformar uma lista de dados num parágrafo coerente de resultados: [cola a lista].",
+          "Explique como descrever resultados de uma revisão de literatura, sem copiar os autores."
+        ],
+        exercise: `Descreve, de forma simulada, um conjunto de resultados que poderias encontrar na tua pesquisa, mesmo que os dados ainda não estejam recolhidos. O objetivo é treinar a forma de apresentação.`,
+        checklist: [
+          "Entendi a diferença entre apresentar resultados e interpretá-los.",
+          "Conheço formas de organizar os dados encontrados.",
+          "Simulei a escrita de resultados no contexto do meu TCC."
+        ],
+      },
+      {
+        id: "et08",
+        title: "Resultados Esperados para Projeto",
+        shortDescription: "Escrever resultados esperados em projetos que ainda não foram executados.",
+        lessonBody: `Em projetos de TCC que ainda não foram executados, muitas instituições solicitam a indicação de "resultados esperados". Não se trata de inventar dados, mas de indicar o que se pretende alcançar com a pesquisa.
+
+Os resultados esperados podem mencionar:
+• Possíveis contribuições para a compreensão de um fenómeno;
+• Melhorias esperadas em determinado contexto;
+• Informações que se espera obter.
+
+Devem ser redigidos no futuro ou em tom de expectativa, deixando claro que o estudo ainda será realizado.`,
+        videoScript: `Se estás na fase de projeto e ainda não aplicaste a pesquisa, provavelmente a tua instituição pede resultados esperados.
+
+Nesta aula, vamos ver como escrever esses resultados sem fingir que o estudo já foi realizado. O foco é descrever que tipo de informação, compreensão ou mudança se espera alcançar ao final da pesquisa.
+
+É uma forma de mostrar o potencial do trabalho, mantendo a honestidade académica.`,
+        pdfTitle: "Aula ET08 – Resultados Esperados",
+        pdfSections: [
+          { heading: "Objetivo dos Resultados Esperados", body: `Mostrar que o projeto tem potencial para gerar conhecimento útil, deixando claro que ainda se trata de uma previsão e não de dados já obtidos.` },
+          { heading: "Forma de Redação", body: `Utiliza expressões que indiquem expectativa, como: "espera-se", "pretende-se", "estima-se que", evitando apresentar resultados como se já fossem reais.` },
+        ],
+        iaPrompts: [
+          "Com base nos meus objetivos [insere objetivos], sugira resultados esperados para o projeto de TCC.",
+          "Reescreva os seguintes resultados esperados para deixar claro que se tratam de previsões: [cola o texto].",
+          "Sugira frases de transição para introduzir resultados esperados em um projeto académico."
+        ],
+        exercise: `Escreve de três a cinco resultados esperados para o teu projeto, considerando o problema e os objetivos definidos. Verifica se está claro que se trata de expectativas.`,
+        checklist: [
+          "Entendi a diferença entre resultados esperados e resultados obtidos.",
+          "Escrevi resultados esperados alinhados aos meus objetivos.",
+          "Evitei apresentar resultados como se já fossem comprovados."
+        ],
+      },
+      {
+        id: "et09",
+        title: "Discussões",
+        shortDescription: "Aprender a interpretar resultados à luz do referencial teórico.",
+        lessonBody: `A secção de discussões é o espaço para interpretar os resultados, relacionando-os com o referencial teórico e com o problema de pesquisa. Aqui, o estudante comenta o significado dos achados.
+
+Passos sugeridos:
+• Retomar um resultado específico;
+• Relacionar com conceitos ou autores;
+• Analisar convergências e divergências;
+• Indicar implicações ou hipóteses explicativas.
+
+A discussão não é apenas repetição do resultado nem repetição do referencial teórico; é um diálogo entre ambos.`,
+        videoScript: `Chegou a parte em que a tua voz aparece com mais força: a discussão.
+
+Nesta aula, vamos ver como pegar um resultado, conectá-lo com o que os autores dizem e tirar conclusões intermédias. O segredo é alternar entre o que foi encontrado e o que já se sabe na literatura, mostrando convergências, diferenças e possíveis explicações.
+
+É nesta secção que mostras maturidade analítica e compreensão do tema.`,
+        pdfTitle: "Aula ET09 – Discussão dos Resultados",
+        pdfSections: [
+          { heading: "Função da Discussão", body: `A discussão interpreta os resultados, relacionando-os com o referencial teórico e com o problema de pesquisa, apontando significados e implicações.` },
+          { heading: "Estratégia de Escrita", body: `Para cada resultado importante, retoma-o em poucas frases, relaciona com pelo menos um autor e apresenta a tua análise crítica sobre o que isso significa.` },
+        ],
+        iaPrompts: [
+          "Sugira uma estrutura de parágrafo para discutir um resultado específico em um TCC.",
+          "Ajude-me a relacionar o seguinte resultado com um conceito teórico: [descreve resultado e conceito].",
+          "Explique como posso evitar repetir o referencial teórico na secção de discussões."
+        ],
+        exercise: `Escolhe um resultado hipotético do teu estudo e escreve um parágrafo de discussão, relacionando-o a pelo menos um conceito ou autor do teu referencial teórico.`,
+        checklist: [
+          "Entendi que discussão é diferente de resultado e de teoria isolada.",
+          "Treinei a escrita de um parágrafo de discussão.",
+          "Comecei a pensar na forma de interpretar os possíveis achados do meu trabalho."
+        ],
+      },
+      {
+        id: "et10",
+        title: "Considerações Finais",
+        shortDescription: "Concluir o trabalho retomando objetivos, síntese dos resultados e contribuições.",
+        lessonBody: `As considerações finais encerram a monografia. Elas retomam o problema e os objetivos, apresentam uma síntese dos principais resultados e apontam limitações e possibilidades futuras.
+
+Não se trata de introduzir novos dados, mas de:
+• Confirmar se os objetivos foram alcançados;
+• Destacar as principais contribuições do estudo;
+• Comentar limitações;
+• Sugerir pesquisas futuras.
+
+O tom deve ser de fechamento, mostrando ao leitor que o percurso foi cumprido.`,
+        videoScript: `Na última parte da monografia, as considerações finais, é hora de fechar a história da tua pesquisa.
+
+Nesta aula, vamos ver como retomar o problema, verificar se os objetivos foram atingidos, sintetizar os resultados mais importantes e apontar limitações e sugestões para estudos futuros. Não vamos trazer dados novos, mas sim organizar o que já foi apresentado, de forma clara e honesta.
+
+É o momento de mostrar que a trajetória teve sentido.`,
+        pdfTitle: "Aula ET10 – Considerações Finais",
+        pdfSections: [
+          { heading: "Função das Considerações Finais", body: `Esta secção encerra o trabalho, respondendo ao problema de pesquisa, indicando o cumprimento dos objetivos e sintetizando as principais contribuições do estudo.` },
+          { heading: "Elementos Importantes", body: `• Retomada do problema e dos objetivos;
+• Síntese dos resultados mais relevantes;
+• Comentário sobre limitações;
+• Sugestão de desdobramentos ou pesquisas futuras.` },
+        ],
+        iaPrompts: [
+          "Com base no meu problema e objetivos [insere texto], sugira um esboço de parágrafo para as considerações finais.",
+          "Ajude-me a transformar a lista de resultados abaixo numa síntese para as considerações finais: [lista de resultados].",
+          "Sugira formas de apresentar limitações do estudo sem enfraquecer o trabalho."
+        ],
+        exercise: `Escreve um rascunho de considerações finais, mesmo que a tua pesquisa ainda não esteja concluída, simulando:
+
+• Como responderias ao problema;
+• Quais resultados destacarias;
+• Que limitações apontarias.
+
+Este exercício ajudará a visualizar o caminho completo.`,
+        checklist: [
+          "Entendi a função das considerações finais.",
+          "Sei que não devo apresentar dados novos nesta secção.",
+          "Simulei uma versão inicial de considerações finais para o meu TCC."
+        ],
+      },
+    ],
   },
   {
     id: "modulo-3",
     number: 3,
-    title: "Escrita Científica",
-    description: "Domine a arte da redação académica com linguagem formal e citações correctas.",
+    title: "Escrita Científica na Prática",
+    description: "Neste módulo, o foco é a redação académica: como construir parágrafos, usar conectores, escrever com objectividade, utilizar IA para apoiar a escrita e fazer citações correctamente.",
     icon: "✍️",
     color: "from-violet-500 to-purple-600",
-    lessons: [],
+    lessons: [
+      {
+        id: "ec01",
+        title: "Fundamentos da Escrita Científica",
+        shortDescription: "Entender as características da linguagem científica e académica.",
+        lessonBody: `A escrita científica utiliza uma linguagem clara, objetiva e precisa. O foco é comunicar ideias de forma compreensível, evitando exageros, opiniões sem fundamento e informalidades.
+
+Características importantes:
+• Clareza – frases bem construídas;
+• Objectividade – evitar rodeios;
+• Coerência – ideias ligadas logicamente;
+• Impessoalidade – foco no fenómeno estudado, não em opiniões pessoais.
+
+Aprender estes fundamentos ajuda o estudante a redigir todos os capítulos da monografia com mais segurança.`,
+        videoScript: `Nesta aula, vamos ver o que torna um texto realmente académico.
+
+A escrita científica precisa ser clara, objetiva e coerente. Não significa escrever difícil, mas sim escrever de forma organizada, evitando expressões demasiado informais e opiniões sem apoio em dados ou autores.
+
+Compreender estas características será o ponto de partida para melhorar a tua redação em toda a monografia.`,
+        pdfTitle: "Aula EC01 – Fundamentos da Escrita Científica",
+        pdfSections: [
+          { heading: "Características Principais", body: `Clareza, objectividade, coerência, coesão e impessoalidade são pilares da escrita científica. O texto deve facilitar a compreensão do leitor.` },
+          { heading: "Linguagem Adequada", body: `Evita gírias, expressões muito informais e frases muito longas. Prefere construções simples, desde que corretas e completas.` },
+        ],
+        iaPrompts: [
+          "Reescreva o parágrafo a seguir em uma linguagem mais académica e objetiva: [cola o parágrafo].",
+          "Liste erros comuns na escrita científica de estudantes de graduação.",
+          "Sugira boas práticas para revisar um texto académico antes de entregar."
+        ],
+        exercise: `Escolhe um parágrafo que já tenhas escrito para o teu TCC e reescreve-o seguindo os princípios de clareza, objectividade e coerência. Compara as versões.`,
+        checklist: [
+          "Sei identificar características da escrita científica.",
+          "Revisitei um parágrafo meu e melhorei a redação.",
+          "Estou mais atento à linguagem utilizada na monografia."
+        ],
+      },
+      {
+        id: "ec02",
+        title: "Escrevendo os Primeiros Parágrafos",
+        shortDescription: "Aprender a iniciar a escrita, construindo parágrafos claros e bem estruturados.",
+        lessonBody: `Começar a escrever é, muitas vezes, a parte mais difícil do TCC. Um bom parágrafo académico costuma ter:
+
+• Uma ideia central (frase temática);
+• Desenvolvimento com explicações, exemplos ou dados;
+• Uma frase de conclusão ou ligação com o próximo parágrafo.
+
+É melhor escrever parágrafos simples e bem organizados do que tentar, de início, criar textos longos e complexos.`,
+        videoScript: `Se estás a travar na hora de começar a escrever, esta aula é para ti.
+
+Vamos aprender a construir parágrafos académicos com uma estrutura simples: uma ideia principal, um desenvolvimento que explica ou exemplifica e uma frase de encerramento ou ligação.
+
+Quando dominas este formato, escrever a introdução, o referencial teórico e a discussão torna-se muito mais acessível.`,
+        pdfTitle: "Aula EC02 – Primeiros Parágrafos da Monografia",
+        pdfSections: [
+          { heading: "Estrutura de Parágrafo", body: `Todo parágrafo deve girar em torno de uma ideia central. As frases seguintes desenvolvem essa ideia, oferecem exemplos ou explicações e preparam a transição para o parágrafo seguinte.` },
+          { heading: "Dicas para Começar", body: `Não esperes pela frase perfeita. Escreve uma versão inicial, mesmo que simples, e melhora com revisões. O importante é colocar a ideia no papel.` },
+        ],
+        iaPrompts: [
+          "Ajude-me a transformar esta lista de ideias em um parágrafo coeso: [cola a lista].",
+          "Sugira frases de abertura para um parágrafo sobre a importância do meu tema: [insere tema].",
+          "Reescreva o parágrafo a seguir, mantendo a mesma ideia, mas melhorando a coesão: [cola o parágrafo]."
+        ],
+        exercise: `Escreve três parágrafos sobre o teu tema:
+
+1. Um parágrafo de contextualização geral;
+2. Um parágrafo relacionando o tema à realidade local;
+3. Um parágrafo apontando um problema ou desafio ligado ao tema.
+
+Guarda estes parágrafos para aproveitá-los na introdução ou no referencial teórico.`,
+        checklist: [
+          "Compreendi a estrutura básica de um parágrafo académico.",
+          "Escrevi três parágrafos ligados ao meu tema.",
+          "Sinto-me mais confortável para iniciar a escrita da monografia."
+        ],
+      },
+      {
+        id: "ec03",
+        title: "Escrita do Referencial Teórico com IA",
+        shortDescription: "Usar IA como apoio na redação do referencial teórico, mantendo originalidade.",
+        lessonBody: `A IA pode ajudar a organizar ideias e sugerir formas de explicar conceitos, mas o estudante continua responsável por ler as fontes e construir o texto com base em autores reais.
+
+Boas práticas:
+• Primeiro ler os textos científicos;
+• Depois, usar IA para resumir ou reorganizar ideias;
+• Reescrever com as próprias palavras;
+• Conferir citações e referências;
+• Verificar plágio antes de incorporar o texto final.
+
+A IA não substitui a leitura nem o pensamento crítico, mas pode apoiar na clareza da redação.`,
+        videoScript: `Aqui vamos trabalhar a combinação entre leituras reais e apoio da IA na escrita do referencial teórico.
+
+A ordem recomendada é: ler os autores, fazer anotações, pedir à IA ajuda para organizar ideias ou melhorar a redação, reescrever com a tua voz e citar correctamente as fontes. Em seguida, verificar se não existe plágio.
+
+Desta forma, manténs a autoria do texto e usas a tecnologia como ferramenta, e não como atalho.`,
+        pdfTitle: "Aula EC03 – Referencial Teórico com Apoio de IA",
+        pdfSections: [
+          { heading: "Sequência Recomendada", body: `1. Ler os autores originais;
+2. Anotar as ideias principais;
+3. Utilizar IA para apoiar na organização ou reescrita;
+4. Reescrever o texto com a tua voz;
+5. Verificar plágio e ajustar o que for necessário.` },
+          { heading: "Cuidados Essenciais", body: `Nunca deixes que a IA "invente" autores ou obras. Confere sempre os dados nas fontes reais. Não copies blocos de texto da IA sem reescrever e verificar originalidade.` },
+        ],
+        iaPrompts: [
+          "Com base nestas anotações de leitura [cola as anotações], ajude-me a montar um parágrafo de referencial teórico.",
+          "Sugira diferentes formas de explicar o conceito a seguir, mantendo o sentido mas com redações alternativas: [insere conceito].",
+          "Liste perguntas que posso fazer à IA para organizar as ideias do meu referencial, sem pedir texto pronto."
+        ],
+        exercise: `Escolhe um conceito central do teu referencial teórico. Lê pelo menos uma fonte sobre ele, faz anotações e depois utiliza a IA para te ajudar a organizar um parágrafo. Em seguida, reescreve o parágrafo com a tua própria forma de expressão.`,
+        checklist: [
+          "Utilizei IA para apoiar, e não para substituir, a minha leitura.",
+          "Reescrevi o texto em vez de copiar diretamente as respostas da IA.",
+          "Estou atento à necessidade de verificar plágio antes de incorporar o texto final."
+        ],
+      },
+      {
+        id: "ec04",
+        title: "Como Fazer Citação",
+        shortDescription: "Aprender a usar citações diretas e indiretas, indicando corretamente as fontes.",
+        lessonBody: `Citações mostram de onde vêm as ideias e permitem que o leitor localize as fontes utilizadas. Existem dois tipos principais:
+
+• Citação direta – reprodução literal de parte do texto do autor, com indicação de autor, ano e página;
+• Citação indireta – reescrita da ideia com as tuas palavras, mantendo a referência ao autor e ao ano.
+
+Em ambos os casos, é essencial indicar claramente a autoria, seguindo o padrão de citação adotado pela tua instituição.`,
+        videoScript: `Nesta aula, vamos aprender a citar autores, tanto de forma direta quanto indireta.
+
+A citação direta ocorre quando reproduzimos exatamente as palavras do autor, entre aspas ou em recuo, sempre com indicação de página. A citação indireta ocorre quando explicamos a ideia com as nossas próprias palavras, mas mantendo o crédito ao autor.
+
+Usar citações correctamente fortalece o teu trabalho e respeita a autoria intelectual.`,
+        pdfTitle: "Aula EC04 – Citações em Trabalhos Académicos",
+        pdfSections: [
+          { heading: "Citação Direta", body: `Reprodução literal de parte de um texto, com indicação de autor, ano e página. Deve ser usada com moderação, apenas quando as palavras do autor forem realmente necessárias.` },
+          { heading: "Citação Indireta", body: `Reprodução da ideia com as tuas próprias palavras, mencionando autor e ano. Ajuda a integrar o pensamento dos autores ao teu próprio texto, sem cópia.` },
+        ],
+        iaPrompts: [
+          "Transforme a seguinte citação direta em citação indireta, mantendo o sentido: [cola a citação].",
+          "Sugira formas de introduzir citações no texto académico, com frases de ligação adequadas.",
+          "Explique a diferença entre citação direta longa e citação direta curta, de forma simples."
+        ],
+        exercise: `Seleciona um pequeno trecho de um livro ou artigo que tenhas lido e:
+
+1. Escreve uma citação direta correta, com autor, ano e página;
+2. Em seguida, escreve uma citação indireta da mesma ideia, com as tuas palavras.
+
+Compara os dois formatos.`,
+        checklist: [
+          "Sei a diferença entre citação direta e indireta.",
+          "Pratiquei ambos os tipos de citação.",
+          "Estou mais seguro para indicar as fontes no meu texto."
+        ],
+      },
+    ],
   },
   {
     id: "modulo-4",
     number: 4,
-    title: "Verificação de Plágio",
-    description: "Garanta a originalidade do seu trabalho com ferramentas e técnicas antiplágio.",
+    title: "Plágio e Originalidade",
+    description: "Neste módulo, o estudante aprende a identificar plágio, a humanizar textos gerados por IA e a utilizar ferramentas de verificação de originalidade de forma consciente.",
     icon: "🔍",
     color: "from-rose-500 to-red-600",
-    lessons: [],
+    lessons: [
+      {
+        id: "po01",
+        title: "Identificando Textos Gerados com IA",
+        shortDescription: "Entender características típicas de textos gerados por IA e como avaliá-los criticamente.",
+        lessonBody: `Textos gerados por IA tendem a ter algumas características em comum, como estrutura muito organizada, uso repetitivo de certas expressões e ausência de detalhes específicos da realidade local.
+
+Ferramentas como Smodin e GPTZero podem indicar probabilidades de um texto ter sido produzido por IA, mas não são perfeitas. O estudante deve usá-las como apoio, não como prova absoluta.
+
+O mais importante é desenvolver senso crítico para analisar se o texto reflete a tua voz, o teu contexto e as fontes reais da pesquisa.`,
+        videoScript: `Nesta aula, vamos falar sobre textos gerados por IA e como reconhecê-los.
+
+Ferramentas especializadas podem apontar que um texto parece ter sido produzido por inteligência artificial, mas nenhuma delas é infalível. Por isso, é essencial que tu mesmo avalies se o texto carrega a tua voz, o teu contexto e as tuas leituras.
+
+Vamos aprender a usar essas ferramentas com cuidado e, principalmente, a construir autenticidade no teu TCC.`,
+        pdfTitle: "Aula PO01 – Textos Gerados por IA",
+        pdfSections: [
+          { heading: "Sinais Comuns", body: `Textos demasiado genéricos, sem referências específicas, com frases muito padronizadas e pouco vínculo com a realidade do estudo podem indicar forte dependência de IA.` },
+          { heading: "Uso de Ferramentas", body: `Ferramentas de detecção de IA devem ser usadas como apoio. Os resultados precisam ser interpretados com prudência, sem conclusões automáticas.` },
+        ],
+        iaPrompts: [
+          "Explique, de forma simples, por que ferramentas de detecção de IA não são 100% confiáveis.",
+          "Sugira uma lista de verificações que posso fazer para saber se um texto representa realmente a minha voz.",
+          "Ajude-me a adaptar este parágrafo genérico para a realidade específica do meu tema: [cola o parágrafo]."
+        ],
+        exercise: `Escolhe um parágrafo que consideres genérico demais. Reescreve-o acrescentando detalhes do teu contexto, do teu problema de pesquisa e das tuas leituras reais.`,
+        checklist: [
+          "Entendi limitações das ferramentas de detecção de IA.",
+          "Identifiquei características de textos excessivamente genéricos.",
+          "Reescrevi pelo menos um parágrafo para o aproximar da minha realidade."
+        ],
+      },
+      {
+        id: "po02",
+        title: "Humanizando Textos Gerados por IA",
+        shortDescription: "Transformar um rascunho gerado por IA em texto com a voz do estudante.",
+        lessonBody: `Humanizar um texto gerado por IA não significa enganar sistemas, mas sim reescrever, ajustar e enriquecer o conteúdo com a tua perspectiva, contexto e leituras reais.
+
+Passos úteis:
+• Ler o texto gerado com espírito crítico;
+• Verificar o que está de acordo com a tua pesquisa;
+• Acrescentar exemplos, contextos e referências que conheces;
+• Mudar a forma de expressão para se aproximar do teu estilo;
+• Cortar o que for desnecessário ou incorreto.
+
+Ao final, o texto deve refletir a tua compreensão, não apenas a resposta da ferramenta.`,
+        videoScript: `Se já pediste à IA um rascunho de texto, esta aula vai ajudar-te a transformá-lo num conteúdo realmente teu.
+
+Vamos ver como revisar, cortar, acrescentar exemplos, adaptar a linguagem e introduzir as tuas fontes, até que o texto deixe de parecer artificial e passe a refletir a tua voz acadêmica.
+
+O objetivo é que uses a IA como ponto de partida, e não como ponto final da escrita.`,
+        pdfTitle: "Aula PO02 – Humanização de Textos com Apoio de IA",
+        pdfSections: [
+          { heading: "Revisão Crítica", body: `Analisa o texto gerado, identifica exageros, repetições, ideias genéricas e partes que não dialogam com a tua realidade ou com o teu problema de pesquisa.` },
+          { heading: "Enriquecimento com Experiência e Fontes Reais", body: `Acrescenta dados, exemplos, observações e referências que realmente consultaste, tornando o texto mais concreto e pessoal.` },
+        ],
+        iaPrompts: [
+          "Mostre formas de adaptar um texto genérico de IA para a realidade de Moçambique, mantendo a ideia principal.",
+          "Sugira um roteiro para eu revisar um texto gerado por IA antes de usar no meu TCC.",
+          "Ajude-me a identificar partes problemáticas no seguinte texto: [cola o texto]."
+        ],
+        exercise: `Escolhe um texto curto produzido por IA. Com base na aula, marca em cores diferentes:
+
+• O que podes manter;
+• O que precisas adaptar;
+• O que deves apagar.
+
+Depois, reescreve o texto com a tua voz e as tuas fontes.`,
+        checklist: [
+          "Revi um texto gerado por IA com postura crítica.",
+          "Adaptei e reescrevi o conteúdo para aproximar da minha voz.",
+          "Percebi que a IA deve ser apenas ponto de partida, não texto final."
+        ],
+      },
+      {
+        id: "po03",
+        title: "Entendendo o Plágio",
+        shortDescription: "Compreender o que é plágio, por que é um problema e como evitá-lo.",
+        lessonBody: `Plágio é o uso de ideias ou textos de outra pessoa sem o devido reconhecimento. Pode ocorrer por cópia direta sem citação, por paráfrases muito próximas do original ou por utilização de trabalhos alheios com o próprio nome.
+
+Consequências do plágio podem incluir:
+• Perda de credibilidade académica;
+• Reprovação do trabalho;
+• Sanções institucionais, dependendo do regulamento.
+
+Evitar o plágio implica citar corretamente, reescrever com as próprias palavras e verificar a originalidade do texto antes da entrega.`,
+        videoScript: `Nesta aula, vamos tratar de um tema sensível e essencial: o plágio.
+
+Plágio não é apenas copiar "ctrl+c, ctrl+v". Ele também aparece quando usamos as ideias de outras pessoas sem citar, quando paráfrases ficam demasiado parecidas com o original ou quando recorremos a trabalhos prontos.
+
+O objetivo é que compreendas por que o plágio é tão grave e como podes evitá-lo, usando boas práticas de citação e revisão.`,
+        pdfTitle: "Aula PO03 – O que é Plágio e Como Evitar",
+        pdfSections: [
+          { heading: "Formas Comuns de Plágio", body: `Cópia literal sem citação, adaptação mínima de texto alheio, utilização de trabalhos prontos, omissão de autores em ideias centrais, entre outras práticas.` },
+          { heading: "Boas Práticas Anti-Plágio", body: `Ler e compreender antes de escrever; utilizar citações diretas e indiretas corretamente; registar fontes ao longo do processo; usar ferramentas de verificação antes da entrega.` },
+        ],
+        iaPrompts: [
+          "Explique, com exemplos simples, as diferenças entre plagiar e citar corretamente.",
+          "Sugira uma lista de atitudes que um estudante deve adoptar para manter a integridade académica.",
+          "Ajude-me a analisar se o seguinte parágrafo pode ser considerado plágio: [cola o parágrafo]."
+        ],
+        exercise: `Escreve, com as tuas palavras, uma pequena declaração de compromisso com a integridade académica, indicando o que farás para evitar plágio no teu TCC.`,
+        checklist: [
+          "Compreendi o conceito de plágio.",
+          "Reconheço a importância da integridade académica.",
+          "Assumi um compromisso pessoal de evitar plágio no meu TCC."
+        ],
+      },
+    ],
   },
   {
     id: "modulo-5",
