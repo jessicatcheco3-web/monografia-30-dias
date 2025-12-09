@@ -1,36 +1,12 @@
-import { useState } from "react";
 import Header from "@/components/layout/Header";
 import Dashboard from "@/components/dashboard/Dashboard";
-import InfoTab from "@/components/info/InfoTab";
-import CourseTab from "@/components/course/CourseTab";
-import ResourcesTab from "@/components/resources/ResourcesTab";
-import ScheduleTab from "@/components/schedule/ScheduleTab";
 
 const Index = () => {
-  const [activeTab, setActiveTab] = useState("dashboard");
-
-  const renderContent = () => {
-    switch (activeTab) {
-      case "dashboard":
-        return <Dashboard onNavigate={setActiveTab} />;
-      case "info":
-        return <InfoTab />;
-      case "course":
-        return <CourseTab />;
-      case "resources":
-        return <ResourcesTab />;
-      case "schedule":
-        return <ScheduleTab />;
-      default:
-        return <Dashboard onNavigate={setActiveTab} />;
-    }
-  };
-
   return (
     <div className="min-h-screen bg-background">
-      <Header activeTab={activeTab} onTabChange={setActiveTab} />
+      <Header activeTab="dashboard" onTabChange={() => {}} />
       <main className="container mx-auto px-4 py-8">
-        {renderContent()}
+        <Dashboard />
       </main>
       
       {/* Footer */}
