@@ -1405,16 +1405,167 @@ O objetivo é que compreendas por que o plágio é tão grave e como podes evit�
           "Assumi um compromisso pessoal de evitar plágio no meu TCC."
         ],
       },
+      {
+        id: "po04",
+        title: "Verificando o Plágio com Ferramentas",
+        shortDescription: "Aprender a usar ferramentas de verificação de plágio e interpretar resultados.",
+        lessonBody: `Ferramentas como o CopySpider e outras soluções de verificação de plágio ajudam a identificar trechos muito semelhantes a textos disponíveis na internet ou em bases registadas.
+
+Passos gerais:
+• Exportar o teu trabalho para um formato compatível;
+• Rodar a verificação na ferramenta;
+• Analisar os trechos sinalizados;
+• Reescrever, citar adequadamente ou remover o que for necessário.
+
+Um percentual elevado de similaridade indica que o texto precisa ser melhor trabalhado. Ainda assim, é preciso considerar que referências e termos técnicos podem gerar coincidências legítimas.`,
+        videoScript: `Nesta aula, vamos aprender a utilizar ferramentas de verificação de plágio como aliadas, e não como ameaça.
+
+Vamos ver como preparar o ficheiro, executar a análise, interpretar os relatórios e decidir o que precisa ser reescrito ou melhor citado. O objetivo é entregar um texto o mais original possível, mantendo as citações legítimas que o trabalho exige.
+
+Verificar o teu trabalho antes da entrega é um cuidado importante com a tua própria credibilidade.`,
+        pdfTitle: "Aula PO04 – Verificação de Plágio na Prática",
+        pdfSections: [
+          { heading: "Função das Ferramentas", body: `Ferramentas de verificação de plágio identificam semelhanças textuais com outras fontes. Não substituem o julgamento humano, mas fornecem um mapa de trechos que devem ser revistos.` },
+          { heading: "Após o Relatório", body: `Ao receber o relatório, revê cada trecho sinalizado, decide o que precisa de citação, reescrita ou remoção e executa os ajustes antes de uma nova verificação.` },
+        ],
+        iaPrompts: [
+          "Explique como interpretar um relatório de plágio que apresenta 25% de similaridade.",
+          "Sugira um plano de ação para reduzir a similaridade de um texto sem perder o conteúdo essencial.",
+          "Ajude-me a reescrever o seguinte parágrafo sinalizado por alta similaridade: [cola o parágrafo]."
+        ],
+        exercise: `Simula um plano de verificação para o teu TCC, definindo:
+
+• Em que momento irás rodar a ferramenta;
+• Como vais tratar os trechos sinalizados;
+• Quantas revisões estás disposto a fazer até chegar a um nível de similaridade aceitável.`,
+        checklist: [
+          "Entendi o objetivo das ferramentas de verificação de plágio.",
+          "Sei que preciso interpretar os resultados com senso crítico.",
+          "Planeei como vou utilizar essas ferramentas no meu processo de escrita."
+        ],
+      },
     ],
   },
   {
-    id: "modulo-5",
+    id: "finalizacao-entrega",
     number: 5,
     title: "Finalização e Entrega",
-    description: "Últimos passos para formatação, revisão e preparação para a defesa.",
+    description: "Neste módulo, o estudante aprende a escrever o resumo, elaborar o orçamento (quando necessário), organizar referências e preparar o trabalho para a entrega final.",
     icon: "🎓",
     color: "from-cyan-500 to-teal-600",
-    lessons: [],
+    lessons: [
+      {
+        id: "fe01",
+        title: "Resumo da Monografia",
+        shortDescription: "Aprender a sintetizar o trabalho em um parágrafo estruturado, com palavras-chave.",
+        lessonBody: `O resumo apresenta, em um único parágrafo, os pontos centrais da monografia: tema, objetivo, metodologia, principais resultados e conclusões. É acompanhado por palavras-chave que facilitam a indexação do trabalho.
+
+Boas práticas:
+• Escrever o resumo após concluir o texto principal;
+• Usar espaçamento simples e justificativa, conforme norma adotada;
+• Evitar siglas e citações excessivas;
+• Utilizar entre três e cinco palavras-chave.`,
+        videoScript: `Estamos quase a concluir o TCC, e agora precisamos condensar todo o trabalho em um resumo.
+
+O resumo deve apresentar, de forma breve e clara, o que foi estudado, com que propósito, como a pesquisa foi realizada e quais resultados e conclusões principais foram obtidos. Também é importante escolher palavras-chave que representem bem o conteúdo da monografia.
+
+Nesta aula, vamos montar um modelo de resumo que podes adaptar ao teu trabalho.`,
+        pdfTitle: "Aula FE01 – Como Elaborar o Resumo",
+        pdfSections: [
+          { heading: "Elementos do Resumo", body: `Tema, objetivo geral, metodologia utilizada, principais resultados e conclusões são os elementos essenciais a serem citados no resumo, de forma condensada.` },
+          { heading: "Palavras-Chave", body: `As palavras-chave devem representar termos centrais do trabalho. Normalmente, utilizam-se de três a cinco, separadas por ponto e vírgula.` },
+        ],
+        iaPrompts: [
+          "Com base na seguinte descrição do meu TCC [cola a descrição], sugira um rascunho de resumo.",
+          "Ajude-me a reduzir este resumo para um parágrafo mais objetivo, mantendo as informações essenciais: [cola o resumo].",
+          "Sugira palavras-chave adequadas para um TCC com o seguinte tema: [insere tema]."
+        ],
+        exercise: `Escreve um primeiro rascunho de resumo para o teu TCC, incluindo:
+
+• Tema;
+• Objetivo geral;
+• Metodologia;
+• Principais resultados e conclusões esperadas ou obtidas;
+• Palavras-chave.
+
+Revisa depois de terminar o texto definitivo.`,
+        checklist: [
+          "Entendi a função do resumo.",
+          "Escrevi um rascunho do resumo da minha monografia.",
+          "Escolhi de três a cinco palavras-chave adequadas ao meu tema."
+        ],
+      },
+      {
+        id: "fe02",
+        title: "Orçamento do Projeto (quando necessário)",
+        shortDescription: "Elaborar um quadro simples de custos para projetos que exigem orçamento.",
+        lessonBody: `Alguns projetos de TCC exigem a apresentação de um orçamento, especialmente quando envolvem deslocações, materiais impressos ou outros custos.
+
+Para montar um orçamento básico:
+• Lista os itens necessários (materiais, serviços, deslocações);
+• Estima a quantidade de cada item;
+• Indica o valor unitário aproximado;
+• Calcula o valor total.
+
+O orçamento deve ser realista e coerente com a proposta metodológica apresentada.`,
+        videoScript: `Se o teu TCC exige um orçamento, esta aula vai guiar-te na elaboração de um quadro simples e organizado.
+
+Vamos listar os itens necessários, estimar quantidades, atribuir valores unitários aproximados e calcular o valor total. O objetivo é mostrar que pensaste com responsabilidade nos recursos necessários para realizar a pesquisa.
+
+Mesmo quando os custos forem assumidos por ti, é importante ter esse planeamento registado.`,
+        pdfTitle: "Aula FE02 – Orçamento do Projeto de Pesquisa",
+        pdfSections: [
+          { heading: "Estrutura de Orçamento", body: `Cria uma tabela com colunas para: item, descrição, quantidade, valor unitário e valor total. Ao final, apresenta o somatório dos custos previstos.` },
+          { heading: "Coerência com a Metodologia", body: `Garante que apenas itens realmente necessários para a pesquisa apareçam no orçamento. Isso demonstra seriedade e planeamento responsável.` },
+        ],
+        iaPrompts: [
+          "Com base na minha metodologia [insere resumo da metodologia], sugira itens que podem compor o orçamento do projeto.",
+          "Ajude-me a organizar uma tabela de orçamento a partir da seguinte lista de itens e valores: [cola a lista].",
+          "Sugira um texto curto explicando que os custos da pesquisa serão de responsabilidade do próprio estudante."
+        ],
+        exercise: `Cria um quadro de orçamento para o teu projeto, mesmo que simples. Inclui pelo menos três itens, com quantidades e valores estimados. Depois, verifica se todos os itens estão ligados à tua metodologia.`,
+        checklist: [
+          "Entendi quando é necessário apresentar orçamento.",
+          "Elaborei um quadro básico de custos para o meu projeto.",
+          "Verifiquei se o orçamento é coerente com a metodologia."
+        ],
+      },
+      {
+        id: "fe03",
+        title: "Formatando as Referências Bibliográficas",
+        shortDescription: "Organizar as referências utilizadas no trabalho segundo um padrão definido.",
+        lessonBody: `As referências bibliográficas reúnem todas as fontes efectivamente citadas no texto. Devem ser apresentadas de forma padronizada, de acordo com as normas adotadas pela tua instituição.
+
+Etapas básicas:
+• Listar todas as fontes utilizadas;
+• Verificar se todas as citações do texto aparecem na lista de referências;
+• Organizar em ordem alfabética pelo sobrenome do autor;
+• Ajustar a formatação conforme o modelo de referência para livros, artigos, documentos eletrónicos e outros tipos de material.
+
+A atenção aos detalhes nesta etapa demonstra cuidado e respeito às normas académicas.`,
+        videoScript: `Estamos na fase final: organizar as referências bibliográficas da monografia.
+
+Nesta aula, vamos ver como montar a lista de referências, em ordem alfabética, garantindo que cada obra citada no texto apareça na lista final e que a formatação siga um padrão definido.
+
+Trata-se de um trabalho minucioso, mas essencial para a qualidade académica do teu TCC.`,
+        pdfTitle: "Aula FE03 – Referências Bibliográficas",
+        pdfSections: [
+          { heading: "Passos para Organizar Referências", body: `1. Reunir todas as fontes utilizadas;\n2. Conferir a correspondência entre citações no texto e entradas na lista;\n3. Ordenar alfabeticamente;\n4. Formatar cada referência de acordo com o tipo de documento.` },
+          { heading: "Cuidados Importantes", body: `Confere ortografia de nomes de autores, datas, títulos e dados de publicação. A padronização é parte da apresentação profissional do trabalho.` },
+        ],
+        iaPrompts: [
+          "Ajude-me a transformar estas informações em uma referência bibliográfica de livro: [cola autor, título, ano, local, editora].",
+          "Explique, de forma clara, como organizar a lista de referências em ordem alfabética.",
+          "Sugira um checklist para revisar a formatação das referências antes de entregar o TCC."
+        ],
+        exercise: `Lista as principais fontes que utilizaste até agora e tenta escrever a referência completa de cada uma, seguindo o padrão exigido pela tua instituição. Depois, organiza essa lista em ordem alfabética.`,
+        checklist: [
+          "Reuni as referências utilizadas no meu trabalho.",
+          "Organizei a lista em ordem alfabética.",
+          "Formatei as referências de acordo com um padrão definido."
+        ],
+      },
+    ],
   },
 ];
 
