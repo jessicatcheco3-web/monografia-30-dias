@@ -9,13 +9,17 @@ import {
   ChevronDown,
   ChevronRight,
   Menu,
-  X
+  X,
+  TrendingUp,
+  CheckCircle2
 } from "lucide-react";
 import { modules } from "@/data/courseData";
 import { cn } from "@/lib/utils";
+import { useProgress } from "@/hooks/useProgress";
 
 const menuItems = [
   { title: "Início", url: "/", icon: Home },
+  { title: "Evolução no Curso", url: "/evolucao", icon: TrendingUp },
   { title: "Informações Gerais", url: "/informacoes", icon: Info },
   { title: "Recursos", url: "/recursos", icon: FileText },
   { title: "Cronograma", url: "/cronograma", icon: Calendar },
@@ -25,6 +29,7 @@ export function AppSidebar() {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(true);
   const [expandedModules, setExpandedModules] = useState<string[]>([]);
+  const { isLessonCompleted } = useProgress();
 
   const toggleModule = (moduleId: string) => {
     setExpandedModules(prev => 
@@ -144,7 +149,9 @@ export function AppSidebar() {
                       <BookOpen size={14} />
                       <span>Visão Geral</span>
                     </Link>
-                    {module.lessons.map((lesson, index) => (
+                    {module.lessons.map((lesson, index) => {
+                      const lessonCompleted = isLessonCompleted(module.id, lesson.id);
+                      return (
                       <Link
                         key={lesson.id}
                         to={`/modulo/${module.id}/aula/${lesson.id}`}
@@ -153,15 +160,22 @@ export function AppSidebar() {
                           "flex items-center gap-2 px-4 py-2 rounded-lg text-sm transition-colors",
                           isActive(`/modulo/${module.id}/aula/${lesson.id}`)
                             ? "bg-primary text-primary-foreground"
+                            : lessonCompleted
+                            ? "text-green-600 hover:bg-muted"
                             : "text-muted-foreground hover:bg-muted hover:text-foreground"
                         )}
                       >
-                        <span className="w-5 h-5 rounded-full bg-muted flex items-center justify-center text-xs">
-                          {index + 1}
-                        </span>
+                        {lessonCompleted ? (
+                          <CheckCircle2 size={16} className="text-green-500 flex-shrink-0" />
+                        ) : (
+                          <span className="w-5 h-5 rounded-full bg-muted flex items-center justify-center text-xs flex-shrink-0">
+                            {index + 1}
+                          </span>
+                        )}
                         <span className="truncate">{lesson.title}</span>
                       </Link>
-                    ))}
+                    );
+                    })}
                   </div>
                 )}
               </div>
