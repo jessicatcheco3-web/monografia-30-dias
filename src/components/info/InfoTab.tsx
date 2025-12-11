@@ -51,7 +51,7 @@ const InfoTab = () => {
               <AccordionContent className="text-sm text-muted-foreground">
                 O nosso suporte está disponível para esclarecer dúvidas sobre o conteúdo do curso, 
                 uso da plataforma e orientações gerais sobre a monografia. Utilize o chat ou 
-                envie as suas questões por email.
+                envie as suas questões directamente.
               </AccordionContent>
             </AccordionItem>
 
@@ -63,9 +63,8 @@ const InfoTab = () => {
                 </div>
               </AccordionTrigger>
               <AccordionContent className="text-sm text-muted-foreground">
-                Pode enviar dúvidas através do formulário de contacto na plataforma, 
-                ou directamente para o email de suporte. Descreva a sua dúvida de forma 
-                clara e inclua o módulo ou aula a que se refere.
+                Pode enviar dúvidas através do formulário de contacto na plataforma. 
+                Descreva a sua dúvida de forma clara e inclua o módulo ou aula a que se refere.
               </AccordionContent>
             </AccordionItem>
 
@@ -93,7 +92,7 @@ const InfoTab = () => {
                 <ul className="list-disc list-inside space-y-1">
                   <li>Use a IA como ferramenta de apoio, nunca como substituto do seu raciocínio</li>
                   <li>Sempre revise e reescreva o conteúdo gerado</li>
-                  <li>Nunca copie textos directamente - parafrasei e adapte</li>
+                  <li>Nunca copie textos directamente - parafraseie e adapte</li>
                   <li>Verifique todas as informações e citações</li>
                   <li>Mantenha a sua voz e estilo de escrita</li>
                 </ul>
@@ -111,7 +110,7 @@ const InfoTab = () => {
                 <ul className="list-disc list-inside space-y-1">
                   <li>Cite sempre as fontes originais</li>
                   <li>Use aspas para citações directas</li>
-                  <li>Parafrasei com as suas próprias palavras</li>
+                  <li>Parafraseie com as suas próprias palavras</li>
                   <li>Verifique com ferramentas antiplágio antes da entrega</li>
                   <li>Mantenha um índice das suas fontes desde o início</li>
                 </ul>

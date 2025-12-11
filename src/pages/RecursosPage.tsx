@@ -25,7 +25,7 @@ const typeIcons: Record<string, any> = {
 
 const typeLabels: Record<string, string> = {
   document: "Documento",
-  presentation: "Apresentação",
+  presentation: "Apresentacão",
   checklist: "Checklist",
   prompts: "Prompts",
 };
