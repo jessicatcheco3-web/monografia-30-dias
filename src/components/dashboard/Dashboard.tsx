@@ -1,14 +1,18 @@
 import { Link } from "react-router-dom";
-import { BookOpen, Clock, Target, ArrowRight, Calendar, FileText } from "lucide-react";
+import { BookOpen, Clock, Target, ArrowRight, Calendar, FileText, CheckCircle2 } from "lucide-react";
 import { modules } from "@/data/courseData";
 import { getAllLessonsCount } from "@/data/lessonContent";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Progress } from "@/components/ui/progress";
 import StatsCard from "./StatsCard";
+import { useProgress } from "@/hooks/useProgress";
 
 const Dashboard = () => {
   const totalLessons = getAllLessonsCount();
   const totalModules = modules.length;
+  const { getTotalProgress, getModuleProgress } = useProgress();
+  const totalProgress = getTotalProgress();
 
   return (
     <div className="space-y-8 animate-fade-in">
@@ -41,6 +45,31 @@ const Dashboard = () => {
         <div className="absolute bottom-0 left-1/2 w-48 h-48 bg-primary-foreground/10 rounded-full blur-2xl" />
       </div>
 
+      {/* Progress Section */}
+      <Card className="border-primary/20">
+        <CardContent className="py-6">
+          <div className="flex flex-col md:flex-row md:items-center gap-4">
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                <CheckCircle2 className="text-primary" size={24} />
+              </div>
+              <div>
+                <h3 className="font-semibold text-foreground">Seu Progresso</h3>
+                <p className="text-sm text-muted-foreground">
+                  {totalProgress.completed} de {totalProgress.total} aulas concluídas
+                </p>
+              </div>
+            </div>
+            <div className="flex-1">
+              <Progress value={totalProgress.percentage} className="h-3" />
+            </div>
+            <div className="text-2xl font-bold text-primary">
+              {totalProgress.percentage}%
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
       {/* Stats Grid */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         <StatsCard
@@ -51,10 +80,10 @@ const Dashboard = () => {
           color="primary"
         />
         <StatsCard
-          title="Total de Aulas"
-          value={totalLessons}
-          subtitle="Aulas completas"
-          icon={FileText}
+          title="Aulas Concluídas"
+          value={totalProgress.completed}
+          subtitle={`de ${totalLessons} aulas`}
+          icon={CheckCircle2}
           color="success"
         />
         <StatsCard
@@ -81,7 +110,9 @@ const Dashboard = () => {
           </h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {modules.map((module, index) => (
+          {modules.map((module, index) => {
+            const moduleProgress = getModuleProgress(module.id);
+            return (
             <Link key={module.id} to={`/modulo/${module.id}`}>
               <div
                 className="module-card opacity-0 animate-fade-in cursor-pointer h-full"
@@ -96,14 +127,18 @@ const Dashboard = () => {
                     <h3 className="font-heading font-semibold text-foreground">
                       {module.title}
                     </h3>
-                    <p className="text-sm text-muted-foreground mt-1">
-                      {module.lessons.length} aulas
-                    </p>
+                    <div className="flex items-center gap-2 mt-2">
+                      <Progress value={moduleProgress.percentage} className="h-1.5 flex-1" />
+                      <span className="text-xs text-muted-foreground whitespace-nowrap">
+                        {moduleProgress.completed}/{moduleProgress.total}
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
             </Link>
-          ))}
+          );
+          })}
         </div>
       </div>
 

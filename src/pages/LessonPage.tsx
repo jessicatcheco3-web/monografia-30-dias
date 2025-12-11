@@ -8,21 +8,25 @@ import {
   Sparkles,
   Copy,
   Check,
-  BookOpen
+  BookOpen,
+  Circle
 } from "lucide-react";
 import { useState } from "react";
-import { modules } from "@/data/courseData";
 import { getLessonContent, getNextLesson, getPreviousLesson } from "@/data/lessonContent";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Checkbox } from "@/components/ui/checkbox";
 import { toast } from "sonner";
+import { useProgress } from "@/hooks/useProgress";
 
 export default function LessonPage() {
   const { moduleId, lessonId } = useParams();
   const [copiedPrompt, setCopiedPrompt] = useState<string | null>(null);
   const [checkedItems, setCheckedItems] = useState<Record<string, boolean>>({});
+  const { isLessonCompleted, toggleLessonComplete } = useProgress();
+
+  const isCompleted = moduleId && lessonId ? isLessonCompleted(moduleId, lessonId) : false;
 
   const lessonData = moduleId && lessonId ? getLessonContent(moduleId, lessonId) : null;
   const nextLesson = moduleId && lessonId ? getNextLesson(moduleId, lessonId) : null;
@@ -232,6 +236,37 @@ export default function LessonPage() {
           </CardContent>
         </Card>
       )}
+
+      {/* Mark as Complete Button */}
+      <div className="flex justify-center">
+        <Button
+          variant={isCompleted ? "outline" : "default"}
+          size="lg"
+          className="gap-2"
+          onClick={() => {
+            if (moduleId && lessonId) {
+              toggleLessonComplete(moduleId, lessonId);
+              if (!isCompleted) {
+                toast.success("Aula marcada como concluída!");
+              } else {
+                toast.info("Aula desmarcada");
+              }
+            }
+          }}
+        >
+          {isCompleted ? (
+            <>
+              <CheckCircle2 size={18} className="text-green-500" />
+              Aula Concluída
+            </>
+          ) : (
+            <>
+              <Circle size={18} />
+              Marcar como Concluída
+            </>
+          )}
+        </Button>
+      </div>
 
       {/* Navigation Buttons */}
       <div className="flex items-center justify-between pt-6 border-t">
