@@ -1,10 +1,10 @@
 import { 
   HelpCircle, 
   MessageCircle, 
-  Download,
-  FileText,
   Shield,
-  ExternalLink
+  ExternalLink,
+  AlertTriangle,
+  CheckCircle2
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
@@ -13,16 +13,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Button } from "@/components/ui/button";
-
-const downloads = [
-  { name: "Modelo de Monografia (PDF)", url: "/downloads/modelo-monografia.pdf" },
-  { name: "Modelo de Apresentação (PPTX)", url: "/downloads/modelo-apresentacao.pptx" },
-  { name: "Slides para Defesa / Apresentação (PPTX)", url: "/downloads/slides-defesa-tcc.pptx" },
-  { name: "Modelo de Resumo (PDF)", url: "/downloads/modelo-resumo.pdf" },
-  { name: "Modelo de Orçamento (PDF)", url: "/downloads/modelo-orcamento.pdf" },
-  { name: "Guia de Referências Bibliográficas (PDF)", url: "/downloads/guia-referencias.pdf" }
-];
 
 export default function InformacoesPage() {
   return (
@@ -37,39 +27,65 @@ export default function InformacoesPage() {
         </p>
       </div>
 
-      {/* Recursos e Downloads */}
+      {/* Uso Ético da IA */}
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-3">
-            <div className="p-2 bg-primary/10 rounded-lg">
-              <Download className="text-primary" size={24} />
+            <div className="p-2 bg-amber-500/10 rounded-lg">
+              <AlertTriangle className="text-amber-600" size={24} />
             </div>
-            Recursos e Downloads
+            Uso Ético da Inteligência Artificial
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <p className="text-muted-foreground mb-6">
-            Nesta página encontrarás todos os materiais de apoio centralizados.
-          </p>
-          <div className="grid gap-3">
-            {downloads.map((item, index) => (
-              <div 
-                key={index}
-                className="flex items-center justify-between p-4 bg-muted rounded-lg hover:bg-muted/80 transition-colors"
-              >
+          <Accordion type="single" collapsible className="w-full" defaultValue="uso-etico">
+            <AccordionItem value="uso-etico">
+              <AccordionTrigger className="text-left">
                 <div className="flex items-center gap-3">
-                  <FileText size={20} className="text-primary" />
-                  <span className="font-medium text-foreground">{item.name}</span>
+                  <CheckCircle2 size={18} className="text-muted-foreground" />
+                  Como usar a IA de forma responsável
                 </div>
-                <Button variant="outline" size="sm" asChild>
-                  <a href={item.url} download className="flex items-center gap-2">
-                    <Download size={16} />
-                    Baixar
-                  </a>
-                </Button>
-              </div>
-            ))}
-          </div>
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground space-y-4">
+                <div className="p-4 bg-amber-500/10 rounded-lg border border-amber-500/20">
+                  <p className="font-medium text-foreground mb-2">
+                    ⚠️ NUNCA faças copy-paste directamente do ChatGPT ou outra IA!
+                  </p>
+                  <p className="text-sm">
+                    Copiar e colar texto gerado por IA pode ser detectado como plágio e resultar 
+                    na reprovação da tua monografia.
+                  </p>
+                </div>
+
+                <p className="font-medium text-foreground">
+                  Passos obrigatórios ao usar IA na tua escrita:
+                </p>
+                <ol className="list-decimal list-inside space-y-2 ml-2">
+                  <li><strong>Gera o conteúdo</strong> – Usa os prompts fornecidos no curso para obter uma base inicial</li>
+                  <li><strong>Lê e compreende</strong> – Certifica-te de que entendes cada frase e conceito</li>
+                  <li><strong>Reescreve com as tuas palavras</strong> – Reformula completamente, mantendo o sentido</li>
+                  <li><strong>Verifica a coerência</strong> – Assegura que o texto flui naturalmente e faz sentido no contexto</li>
+                  <li><strong>Confirma os factos</strong> – Verifica datas, nomes, estatísticas e referências</li>
+                  <li><strong>Passa pelo detector de IA</strong> – Usa ferramentas como GPTZero ou Originality.ai</li>
+                  <li><strong>Humaniza o texto</strong> – Se necessário, ajusta para que pareça natural e autêntico</li>
+                </ol>
+
+                <div className="p-4 bg-muted rounded-lg mt-4">
+                  <p className="font-medium text-foreground mb-2">Ferramentas recomendadas:</p>
+                  <ul className="list-disc list-inside space-y-1 text-sm">
+                    <li><strong>Detecção de IA:</strong> GPTZero, Originality.ai, Copyleaks</li>
+                    <li><strong>Verificação de plágio:</strong> Turnitin, Plagiarism Detector</li>
+                    <li><strong>Humanização:</strong> Undetectable AI, Quillbot (paráfrase)</li>
+                  </ul>
+                </div>
+
+                <p className="text-sm italic mt-4">
+                  A IA é uma ferramenta de apoio, não um substituto do teu trabalho intelectual. 
+                  O objectivo é aprender e desenvolver competências, não apenas entregar um documento.
+                </p>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </CardContent>
       </Card>
 
