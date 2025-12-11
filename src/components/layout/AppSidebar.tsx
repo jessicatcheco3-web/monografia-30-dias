@@ -13,9 +13,11 @@ import {
   TrendingUp,
   CheckCircle2
 } from "lucide-react";
+import { LogOut } from "lucide-react";
 import { modules } from "@/data/courseData";
 import { cn } from "@/lib/utils";
 import { useProgress } from "@/hooks/useProgress";
+import { useAuth } from "@/auth/AuthContext";
 
 const menuItems = [
   { title: "Início", url: "/", icon: Home },
@@ -30,6 +32,7 @@ export function AppSidebar() {
   const [isOpen, setIsOpen] = useState(true);
   const [expandedModules, setExpandedModules] = useState<string[]>([]);
   const { isLessonCompleted } = useProgress();
+  const { auth, logout } = useAuth();
 
   const toggleModule = (moduleId: string) => {
     setExpandedModules(prev => 
@@ -183,7 +186,21 @@ export function AppSidebar() {
           </nav>
 
           {/* Footer */}
-          <div className="p-4 border-t border-border">
+          <div className="p-4 border-t border-border space-y-3">
+            {auth.user && (
+              <div className="flex items-center justify-between">
+                <span className="text-sm text-muted-foreground truncate">
+                  {auth.user.username}
+                </span>
+                <button
+                  onClick={logout}
+                  className="flex items-center gap-1 text-sm text-muted-foreground hover:text-destructive transition-colors"
+                >
+                  <LogOut size={16} />
+                  Sair
+                </button>
+              </div>
+            )}
             <p className="text-xs text-muted-foreground text-center">
               © 2024 UFUTURO Licenciado
             </p>
