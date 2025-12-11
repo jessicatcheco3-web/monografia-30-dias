@@ -3,6 +3,9 @@ import type { AuthState, AuthCredentials, AuthUser } from "./authTypes";
 
 const AUTH_STORAGE_KEY = "ufuturo_auth_state";
 
+// 🔐 Palavra-passe única do curso
+const MASTER_PASSWORD = "UFUTUROlicenciadosoueu1";
+
 const defaultAuthState: AuthState = {
   isAuthenticated: false,
   user: null,
@@ -47,8 +50,11 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const login = async (credentials: AuthCredentials): Promise<boolean> => {
     const { username, password } = credentials;
 
-    // Login simples: qualquer username + password não vazios
+    // Precisa preencher os dois campos
     if (!username.trim() || !password.trim()) return false;
+
+    // Verifica se a palavra-passe está correcta
+    if (password !== MASTER_PASSWORD) return false;
 
     const user: AuthUser = { username: username.trim() };
     setAuth({ isAuthenticated: true, user });
