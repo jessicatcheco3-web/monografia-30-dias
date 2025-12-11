@@ -10,6 +10,7 @@ import ModulePage from "./pages/ModulePage";
 import LessonPage from "./pages/LessonPage";
 import RecursosPage from "./pages/RecursosPage";
 import CronogramaPage from "./pages/CronogramaPage";
+import EvolucaoPage from "./pages/EvolucaoPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +29,7 @@ const App = () => (
             <Route path="/modulo/:moduleId/aula/:lessonId" element={<LessonPage />} />
             <Route path="/recursos" element={<RecursosPage />} />
             <Route path="/cronograma" element={<CronogramaPage />} />
+            <Route path="/evolucao" element={<EvolucaoPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </MainLayout>
