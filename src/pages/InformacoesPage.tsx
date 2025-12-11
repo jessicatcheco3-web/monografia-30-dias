@@ -16,12 +16,12 @@ import {
 import { Button } from "@/components/ui/button";
 
 const downloads = [
-  { name: "Modelo de monografia (PDF)", url: "/downloads/modelo-monografia.pdf" },
-  { name: "Modelo de apresentação (PowerPoint)", url: "/downloads/modelo-apresentacao.pptx" },
-  { name: "Slides prontos para defesa (PPTX)", url: "/downloads/slides-defesa.pptx" },
-  { name: "Modelo de resumo (PDF)", url: "/downloads/modelo-resumo.pdf" },
-  { name: "Modelo de orçamento (PDF)", url: "/downloads/modelo-orcamento.pdf" },
-  { name: "Guia de referências bibliográficas (PDF)", url: "/downloads/guia-referencias.pdf" }
+  { name: "Modelo de Monografia (PDF)", url: "/downloads/modelo-monografia.pdf" },
+  { name: "Modelo de Apresentação (PPTX)", url: "/downloads/modelo-apresentacao.pptx" },
+  { name: "Slides para Defesa / Apresentação (PPTX)", url: "/downloads/slides-defesa-tcc.pptx" },
+  { name: "Modelo de Resumo (PDF)", url: "/downloads/modelo-resumo.pdf" },
+  { name: "Modelo de Orçamento (PDF)", url: "/downloads/modelo-orcamento.pdf" },
+  { name: "Guia de Referências Bibliográficas (PDF)", url: "/downloads/guia-referencias.pdf" }
 ];
 
 export default function InformacoesPage() {
@@ -94,19 +94,19 @@ export default function InformacoesPage() {
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground space-y-3">
                 <p>
-                  O suporte oficial do curso é oferecido exclusivamente no grupo de WhatsApp 
-                  onde o estudante é adicionado após a confirmação do pagamento.
+                  O suporte oficial do curso UFUTURO Licenciado é prestado exclusivamente através do grupo de WhatsApp.
                 </p>
                 <p>
-                  Não utilizamos email ou outros meios externos para suporte académico. O grupo serve para:
+                  O estudante é adicionado ao grupo <strong>APÓS</strong> a confirmação do pagamento e <strong>ANTES</strong> de receber o acesso à plataforma.
                 </p>
+                <p className="font-medium text-foreground">No grupo de WhatsApp:</p>
                 <ul className="list-disc list-inside space-y-1 ml-2">
-                  <li>Esclarecer dúvidas relacionadas às aulas</li>
-                  <li>Publicar avisos e actualizações do curso</li>
-                  <li>Suporte motivacional e acompanhamento do progresso</li>
+                  <li>Podes colocar dúvidas sobre as aulas e os materiais</li>
+                  <li>Recebes avisos importantes e lembretes de cronograma</li>
+                  <li>Tens acompanhamento e motivação ao longo do percurso</li>
                 </ul>
                 <p className="mt-4 p-3 bg-muted rounded-lg text-sm">
-                  Para manter o ambiente organizado, perguntas devem ser objectivas e relacionadas ao conteúdo da plataforma.
+                  Não utilizamos email ou outros canais externos para suporte académico rotineiro.
                 </p>
               </AccordionContent>
             </AccordionItem>
@@ -135,23 +135,22 @@ export default function InformacoesPage() {
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground space-y-4">
                 <p>
-                  O curso UFUTURO Licenciado oferece uma garantia de satisfação baseada em resultados.
+                  O curso UFUTURO Licenciado oferece uma garantia baseada em compromisso e resultado.
                 </p>
                 <p className="font-medium text-foreground">
-                  O estudante tem direito à devolução integral do valor investido caso:
+                  O estudante poderá solicitar a devolução do valor investido se:
                 </p>
                 <ol className="list-decimal list-inside space-y-2 ml-2">
-                  <li>Tenha concluído 100% das aulas da plataforma</li>
-                  <li>Tenha seguido o cronograma sugerido (30 dias ou 7 dias intensivo)</li>
-                  <li>Tenha realizado todas as actividades práticas obrigatórias</li>
-                  <li>Tenha preenchido os checklists de conclusão de cada módulo</li>
-                  <li>Tenha utilizado os modelos, PDFs e orientações conforme recomendado</li>
-                  <li>Comprove, através dos registos no painel de progresso, que executou cada etapa</li>
+                  <li>Concluir 100% das aulas da plataforma</li>
+                  <li>Seguir o cronograma sugerido (30 dias ou 7 dias intensivo), registando o progresso</li>
+                  <li>Realizar todas as actividades práticas obrigatórias de cada módulo</li>
+                  <li>Utilizar os materiais de apoio (PDFs, modelos e guias) conforme as orientações</li>
+                  <li>Preencher os checklists de conclusão ao longo do curso</li>
+                  <li>Comprovar, por meio do painel de progresso e dos registos na plataforma, que cumpriu todas as etapas</li>
                 </ol>
                 <p>
-                  Se, mesmo cumprindo integralmente o processo, o estudante não conseguir finalizar 
-                  a sua monografia, poderá solicitar a devolução do valor no prazo de 7 dias após 
-                  concluir a última aula.
+                  Se, mesmo assim, o estudante não conseguir concluir a monografia, poderá solicitar 
+                  a devolução no prazo de 7 dias após a conclusão da última aula.
                 </p>
               </AccordionContent>
             </AccordionItem>
@@ -164,25 +163,25 @@ export default function InformacoesPage() {
                 </div>
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground space-y-4">
-                <p className="font-medium text-foreground">Como solicitar:</p>
+                <p className="font-medium text-foreground">Como solicitar a devolução:</p>
                 <ul className="list-disc list-inside space-y-2 ml-2">
-                  <li>Enviar mensagem privada à administradora no WhatsApp do grupo oficial</li>
-                  <li>Apresentar evidências de conclusão das aulas (sistema regista automaticamente)</li>
-                  <li>Preencher o formulário de devolução enviado pelo suporte</li>
+                  <li>Contactar a administradora através de mensagem privada no grupo de WhatsApp oficial</li>
+                  <li>Explicar a situação e anexar os comprovativos de conclusão (print do progresso, checklists, etc.)</li>
+                  <li>Aguardar a análise do pedido e a resposta formal</li>
                 </ul>
                 
                 <div className="p-4 bg-destructive/10 rounded-lg mt-4">
-                  <p className="font-medium text-destructive mb-2">Não serão elegíveis:</p>
+                  <p className="font-medium text-destructive mb-2">Não serão elegíveis pedidos de devolução de:</p>
                   <ul className="list-disc list-inside space-y-1 text-sm">
-                    <li>Estudantes que não concluíram 100% das aulas</li>
-                    <li>Estudantes que não utilizaram os materiais conforme orientado</li>
-                    <li>Estudantes que abandonaram o cronograma ou deixaram de participar nos prazos</li>
-                    <li>Casos sem registo de actividades dentro da plataforma</li>
+                    <li>Estudantes que não tenham concluído todas as aulas</li>
+                    <li>Estudantes que não tenham seguido o cronograma ou as actividades recomendadas</li>
+                    <li>Estudantes sem registos de progresso na plataforma</li>
+                    <li>Estudantes que abandonaram o curso no meio, sem cumprir as etapas propostas</li>
                   </ul>
                 </div>
                 
                 <p className="text-sm italic mt-4">
-                  Esta política existe para garantir comprometimento, qualidade e resultados reais aos estudantes.
+                  Esta política existe para proteger os estudantes comprometidos e garantir que o curso entregue valor real, com responsabilidade de ambas as partes.
                 </p>
               </AccordionContent>
             </AccordionItem>
