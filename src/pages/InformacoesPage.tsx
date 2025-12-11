@@ -4,7 +4,8 @@ import {
   Shield,
   ExternalLink,
   AlertTriangle,
-  CheckCircle2
+  CheckCircle2,
+  BookOpen
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
@@ -26,6 +27,60 @@ export default function InformacoesPage() {
           Tudo o que precisa saber para aproveitar ao máximo o UFUTURO Licenciado.
         </p>
       </div>
+
+      {/* Abordagem Integrada dos Materiais */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-3">
+            <div className="p-2 bg-primary/10 rounded-lg">
+              <BookOpen className="text-primary" size={24} />
+            </div>
+            Sobre os Materiais do Curso
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <Accordion type="single" collapsible className="w-full" defaultValue="materiais-integrados">
+            <AccordionItem value="materiais-integrados">
+              <AccordionTrigger className="text-left">
+                <div className="flex items-center gap-3">
+                  <CheckCircle2 size={18} className="text-muted-foreground" />
+                  Por que não há modelos para download?
+                </div>
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground space-y-4">
+                <p>
+                  Optámos por <strong>sintetizar toda a informação directamente no conteúdo das aulas</strong>, 
+                  em vez de disponibilizar múltiplos PDFs e modelos para download.
+                </p>
+                
+                <div className="p-4 bg-primary/10 rounded-lg border border-primary/20">
+                  <p className="font-medium text-foreground mb-2">
+                    💡 O nosso objectivo: que termines com sucesso!
+                  </p>
+                  <p className="text-sm">
+                    Muitos estudantes acumulam dezenas de materiais que nunca chegam a usar. 
+                    Por isso, organizámos tudo de forma prática e acessível dentro das aulas.
+                  </p>
+                </div>
+
+                <p className="font-medium text-foreground">
+                  O que encontras integrado em cada aula:
+                </p>
+                <ul className="list-disc list-inside space-y-2 ml-2">
+                  <li><strong>Conteúdo dos modelos</strong> – Toda a estrutura e exemplos que estariam em PDFs estão explicados passo a passo nas aulas</li>
+                  <li><strong>Prompts prontos</strong> – Os prompts de IA para cada secção da monografia estão incluídos directamente no conteúdo relevante</li>
+                  <li><strong>Checklists de monitorização</strong> – Cada módulo inclui uma checklist para acompanhares o teu desempenho e garantires que não saltas nenhuma etapa</li>
+                </ul>
+
+                <p className="text-sm italic mt-4 p-3 bg-muted rounded-lg">
+                  Desta forma, tens tudo o que precisas num só lugar, sem precisar de alternar entre ficheiros. 
+                  Basta seguir as aulas na ordem e a tua monografia vai ganhando forma naturalmente.
+                </p>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        </CardContent>
+      </Card>
 
       {/* Uso Ético da IA */}
       <Card>
