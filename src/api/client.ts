@@ -3,10 +3,12 @@
  * Comunicação com o backend PHP
  */
 
-// URL base da API (alterar para produção)
+// URL base da API
+// Em desenvolvimento, usa o domínio de produção para testes
+// Em produção, usa caminho relativo
 const API_BASE_URL = import.meta.env.PROD 
   ? '/api' 
-  : 'http://localhost/api';
+  : 'https://ufuturolicenciado.com/api';
 
 interface ApiResponse<T = unknown> {
   success: boolean;
