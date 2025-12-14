@@ -27,10 +27,10 @@ const LoginPage: React.FC = () => {
     setError(null);
     setIsLoading(true);
 
-    const ok = await login({ username, password });
+    const result = await login({ username, password });
 
-    if (!ok) {
-      setError("Nome de utilizador e palavra-passe são obrigatórios.");
+    if (!result.success) {
+      setError(result.message || "Erro ao efectuar login.");
       setIsLoading(false);
       return;
     }
@@ -72,7 +72,7 @@ const LoginPage: React.FC = () => {
                   type="text"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
-                  placeholder="ex: estudante.ufuturo"
+                  placeholder="ex: estudante.nome"
                   className="h-11"
                   autoComplete="username"
                 />
@@ -116,7 +116,7 @@ const LoginPage: React.FC = () => {
         </Card>
 
         <p className="text-center text-xs text-muted-foreground mt-6">
-          © 2024 UFUTURO Licenciado — Moçambique
+          © 2025 UFUTURO Licenciado — Moçambique
         </p>
       </div>
     </div>

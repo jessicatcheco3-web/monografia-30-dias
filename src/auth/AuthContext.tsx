@@ -1,10 +1,8 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
-import type { AuthState, AuthCredentials, AuthUser } from "./authTypes";
+import React, { createContext, useContext, useEffect, useState, useCallback } from "react";
+import type { AuthState, AuthCredentials } from "./authTypes";
+import { apiLogin, apiLogout, apiGetMe, type AuthUser } from "@/api/client";
 
 const AUTH_STORAGE_KEY = "ufuturo_auth_state";
-
-// 🔐 Palavra-passe única do curso
-const MASTER_PASSWORD = "UFUTUROlicenciadosoueu1";
 
 const defaultAuthState: AuthState = {
   isAuthenticated: false,
@@ -13,14 +11,16 @@ const defaultAuthState: AuthState = {
 
 type AuthContextValue = {
   auth: AuthState;
-  login: (credentials: AuthCredentials) => Promise<boolean>;
-  logout: () => void;
+  login: (credentials: AuthCredentials) => Promise<{ success: boolean; message?: string }>;
+  logout: () => Promise<void>;
+  isLoading: boolean;
 };
 
 const AuthContext = createContext<AuthContextValue>({
   auth: defaultAuthState,
-  login: async () => false,
-  logout: () => {},
+  login: async () => ({ success: false }),
+  logout: async () => {},
+  isLoading: true,
 });
 
 export const useAuth = () => useContext(AuthContext);
@@ -29,40 +29,88 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [auth, setAuth] = useState<AuthState>(defaultAuthState);
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    const saved = localStorage.getItem(AUTH_STORAGE_KEY);
-    if (saved) {
-      try {
-        setAuth(JSON.parse(saved));
-      } catch {
-        setAuth(defaultAuthState);
+  // Verificar sessão ao carregar a aplicação
+  const checkSession = useCallback(async () => {
+    try {
+      // Primeiro verificar localStorage para resposta rápida
+      const saved = localStorage.getItem(AUTH_STORAGE_KEY);
+      if (saved) {
+        try {
+          const parsed = JSON.parse(saved);
+          if (parsed.isAuthenticated && parsed.user) {
+            setAuth(parsed);
+          }
+        } catch {
+          // Ignorar erro de parse
+        }
       }
+
+      // Depois validar com o servidor
+      const response = await apiGetMe();
+      
+      if (response.success && response.authenticated && response.user) {
+        const newAuth: AuthState = {
+          isAuthenticated: true,
+          user: {
+            id: response.user.id,
+            username: response.user.username,
+            fullName: response.user.full_name,
+          },
+        };
+        setAuth(newAuth);
+        localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify(newAuth));
+      } else {
+        // Sessão inválida ou expirada
+        setAuth(defaultAuthState);
+        localStorage.removeItem(AUTH_STORAGE_KEY);
+      }
+    } catch {
+      // Em caso de erro de rede, manter estado local se existir
+    } finally {
+      setIsLoading(false);
     }
-    setIsLoading(false);
   }, []);
 
   useEffect(() => {
-    if (!isLoading) {
-      localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify(auth));
-    }
-  }, [auth, isLoading]);
+    checkSession();
+  }, [checkSession]);
 
-  const login = async (credentials: AuthCredentials): Promise<boolean> => {
+  const login = async (credentials: AuthCredentials): Promise<{ success: boolean; message?: string }> => {
     const { username, password } = credentials;
 
-    // Precisa preencher os dois campos
-    if (!username.trim() || !password.trim()) return false;
+    // Validação local
+    if (!username.trim() || !password.trim()) {
+      return { 
+        success: false, 
+        message: "Nome de utilizador e palavra-passe são obrigatórios." 
+      };
+    }
 
-    // Verifica se a palavra-passe está correcta
-    if (password !== MASTER_PASSWORD) return false;
+    // Chamar API
+    const response = await apiLogin(username.trim(), password);
 
-    const user: AuthUser = { username: username.trim() };
-    setAuth({ isAuthenticated: true, user });
+    if (response.success && response.user) {
+      const newAuth: AuthState = {
+        isAuthenticated: true,
+        user: {
+          id: response.user.id,
+          username: response.user.username,
+          fullName: response.user.full_name,
+        },
+      };
+      setAuth(newAuth);
+      localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify(newAuth));
+      return { success: true };
+    }
 
-    return true;
+    return { 
+      success: false, 
+      message: response.message || "Credenciais inválidas." 
+    };
   };
 
-  const logout = () => {
+  const logout = async () => {
+    await apiLogout();
     setAuth(defaultAuthState);
     localStorage.removeItem(AUTH_STORAGE_KEY);
   };
@@ -76,7 +124,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   }
 
   return (
-    <AuthContext.Provider value={{ auth, login, logout }}>
+    <AuthContext.Provider value={{ auth, login, logout, isLoading }}>
       {children}
     </AuthContext.Provider>
   );

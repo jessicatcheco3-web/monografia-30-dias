@@ -202,7 +202,7 @@ export function AppSidebar() {
               </div>
             )}
             <p className="text-xs text-muted-foreground text-center">
-              © 2024 UFUTURO Licenciado
+              © 2025 UFUTURO Licenciado
             </p>
           </div>
         </div>

@@ -1,13 +1,15 @@
-export type AuthUser = {
+export interface AuthUser {
+  id?: number;
   username: string;
-};
+  fullName?: string;
+}
 
-export type AuthState = {
+export interface AuthState {
   isAuthenticated: boolean;
   user: AuthUser | null;
-};
+}
 
-export type AuthCredentials = {
+export interface AuthCredentials {
   username: string;
   password: string;
-};
+}
