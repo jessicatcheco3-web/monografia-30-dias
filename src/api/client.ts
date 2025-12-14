@@ -3,10 +3,23 @@
  * Comunicação com o backend PHP
  */
 
-// URL base da API (alterar para produção)
-const API_BASE_URL = import.meta.env.PROD 
-  ? '/api' 
-  : 'http://localhost/api';
+// URL base da API - detecta automaticamente o ambiente
+const API_BASE_URL = (() => {
+  // Em produção no Hostinger
+  if (window.location.hostname.includes('ufuturo') || 
+      window.location.hostname.includes('hostinger')) {
+    return '/api';
+  }
+  // Em localhost com XAMPP/MAMP
+  if (window.location.hostname === 'localhost' && window.location.port !== '5173') {
+    return '/api';
+  }
+  // Em ambiente de desenvolvimento (Lovable preview) - usa fallback
+  return null;
+})();
+
+// Flag para modo de desenvolvimento sem backend
+const IS_DEV_MODE = API_BASE_URL === null;
 
 interface ApiResponse<T = unknown> {
   success: boolean;
@@ -33,10 +46,19 @@ async function apiRequest<T>(
   endpoint: string, 
   options: RequestInit = {}
 ): Promise<ApiResponse<T>> {
+  // Em modo dev sem backend, retorna erro amigável
+  if (IS_DEV_MODE) {
+    console.warn('API não disponível no preview. Deploy no Hostinger para testar autenticação.');
+    return {
+      success: false,
+      message: 'API disponível apenas em produção. Faça deploy no Hostinger.',
+    };
+  }
+
   try {
     const response = await fetch(`${API_BASE_URL}/${endpoint}`, {
       ...options,
-      credentials: 'include', // Importante para cookies de sessão
+      credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
         ...options.headers,
