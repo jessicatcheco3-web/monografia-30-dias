@@ -14,6 +14,7 @@ import RecursosPage from "./pages/RecursosPage";
 import CronogramaPage from "./pages/CronogramaPage";
 import EvolucaoPage from "./pages/EvolucaoPage";
 import LoginPage from "./pages/LoginPage";
+import LandingPage from "./pages/LandingPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,8 +27,9 @@ const App = () => (
       <AuthProvider>
         <BrowserRouter>
           <Routes>
-            {/* Rota pública */}
+            {/* Rotas públicas */}
             <Route path="/login" element={<LoginPage />} />
+            <Route path="/lista-espera" element={<LandingPage />} />
             
             {/* Rotas protegidas */}
             <Route path="/" element={
