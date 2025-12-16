@@ -1,7 +1,7 @@
 import { CheckCircle2, Clock, FileText, Sparkles, Target, Users } from "lucide-react";
 
 const LandingPage = () => {
-  const whatsappLink = "https://wa.me/258XXXXXXXXX?text=Quero%20entrar%20na%20lista%20de%20espera";
+  const whatsappLink = "https://chat.whatsapp.com/IGN7NGZRZyoKHThCFmBxzO";
 
   return (
     <div className="min-h-screen bg-[#0b0f14] text-[#e6edf6]" style={{
