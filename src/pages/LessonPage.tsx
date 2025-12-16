@@ -36,7 +36,7 @@ export default function LessonPage() {
     return (
       <div className="max-w-4xl mx-auto text-center py-12">
         <h1 className="text-2xl font-bold text-foreground mb-4">Aula não encontrada</h1>
-        <Link to="/">
+        <Link to="/inicio">
           <Button>Voltar ao Início</Button>
         </Link>
       </div>
@@ -70,7 +70,7 @@ export default function LessonPage() {
             Voltar ao Módulo
           </Button>
         </Link>
-        <Link to="/">
+        <Link to="/inicio">
           <Button variant="ghost" size="sm" className="gap-2">
             <Home size={16} />
             Início
@@ -80,7 +80,7 @@ export default function LessonPage() {
 
       {/* Breadcrumb */}
       <div className="flex items-center gap-2 text-sm text-muted-foreground">
-        <Link to="/" className="hover:text-primary">Início</Link>
+        <Link to="/inicio" className="hover:text-primary">Início</Link>
         <span>/</span>
         <Link to={`/modulo/${moduleId}`} className="hover:text-primary">
           Módulo {module.number}: {module.title}
@@ -281,7 +281,7 @@ export default function LessonPage() {
           <div />
         )}
 
-        <Link to="/">
+        <Link to="/inicio">
           <Button variant="ghost" className="gap-2">
             <Home size={16} />
             Início
@@ -296,7 +296,7 @@ export default function LessonPage() {
             </Button>
           </Link>
         ) : (
-          <Link to="/">
+          <Link to="/inicio">
             <Button className="gap-2">
               Concluir Módulo
               <CheckCircle2 size={16} />

@@ -18,7 +18,7 @@ const LoginPage: React.FC = () => {
 
   useEffect(() => {
     if (auth.isAuthenticated) {
-      navigate("/");
+      navigate("/inicio");
     }
   }, [auth.isAuthenticated, navigate]);
 
@@ -35,7 +35,7 @@ const LoginPage: React.FC = () => {
       return;
     }
 
-    navigate("/");
+    navigate("/inicio");
   };
 
   if (auth.isAuthenticated) {

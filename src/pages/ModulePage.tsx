@@ -18,7 +18,7 @@ export default function ModulePage() {
     return (
       <div className="max-w-4xl mx-auto text-center py-12">
         <h1 className="text-2xl font-bold text-foreground mb-4">Módulo não encontrado</h1>
-        <Link to="/">
+        <Link to="/inicio">
           <Button>Voltar ao Início</Button>
         </Link>
       </div>
@@ -29,13 +29,13 @@ export default function ModulePage() {
     <div className="max-w-4xl mx-auto space-y-8">
       {/* Navigation */}
       <div className="flex items-center gap-4">
-        <Link to="/">
+        <Link to="/inicio">
           <Button variant="outline" size="sm" className="gap-2">
             <ArrowLeft size={16} />
             Voltar
           </Button>
         </Link>
-        <Link to="/">
+        <Link to="/inicio">
           <Button variant="ghost" size="sm" className="gap-2">
             <Home size={16} />
             Início
