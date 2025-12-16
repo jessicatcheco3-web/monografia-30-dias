@@ -1,4 +1,4 @@
-import { CheckCircle2, Clock, FileText, Sparkles, Target, Users } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const LandingPage = () => {
   const whatsappLink = "https://chat.whatsapp.com/IGN7NGZRZyoKHThCFmBxzO";
@@ -16,14 +16,22 @@ const LandingPage = () => {
             <span>UFUTURO LICENCIADO</span>
             <small className="text-[#a7b4c8] font-semibold text-sm">Curso prático • Monografia em até 30 dias</small>
           </div>
-          <a 
-            href={whatsappLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden sm:inline-flex items-center justify-center px-4 py-3 rounded-full bg-[#26d07c] text-[#042012] font-extrabold border border-black/25 hover:bg-[#21b86e] active:translate-y-px transition-all whitespace-nowrap"
-          >
-            Entrar na Lista de Espera (WhatsApp)
-          </a>
+          <div className="flex items-center gap-2">
+            <Link 
+              to="/login"
+              className="hidden sm:inline-flex items-center justify-center px-4 py-3 rounded-full bg-transparent text-[#e6edf6] font-extrabold border border-white/[0.08] hover:bg-white/5 transition-all whitespace-nowrap"
+            >
+              Já sou estudante
+            </Link>
+            <a 
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden sm:inline-flex items-center justify-center px-4 py-3 rounded-full bg-[#26d07c] text-[#042012] font-extrabold border border-black/25 hover:bg-[#21b86e] active:translate-y-px transition-all whitespace-nowrap"
+            >
+              Entrar na Lista de Espera
+            </a>
+          </div>
         </header>
 
         {/* Hero Section */}
