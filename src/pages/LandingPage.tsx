@@ -213,9 +213,18 @@ const LandingPage = () => {
           
           <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-4 items-stretch">
             <div className="border border-[#26d07c]/35 bg-[#26d07c]/[0.08] rounded-[18px] p-4">
+              {/* Scarcity Trigger */}
+              <div className="bg-[#ff4d4d]/15 border border-[#ff4d4d]/40 rounded-xl p-3 mb-4">
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="w-2 h-2 bg-[#ff4d4d] rounded-full animate-pulse" />
+                  <span className="text-[#ff4d4d] font-bold text-sm">⚠️ APENAS 23 VAGAS RESTANTES</span>
+                </div>
+                <p className="text-[#a7b4c8] text-xs">O preço volta para 8.000 MT quando as vagas acabarem.</p>
+              </div>
+
               <div className="flex flex-wrap gap-2.5 mb-4">
                 <span className="inline-flex px-2.5 py-1.5 rounded-full border border-white/[0.08] bg-black/[0.18] text-xs text-[#a7b4c8] font-extrabold">🔥 Lançamento</span>
-                <span className="inline-flex px-2.5 py-1.5 rounded-full border border-white/[0.08] bg-black/[0.18] text-xs text-[#a7b4c8] font-extrabold">vagas limitadas</span>
+                <span className="inline-flex px-2.5 py-1.5 rounded-full border border-[#ff4d4d]/40 bg-[#ff4d4d]/10 text-xs text-[#ff4d4d] font-extrabold animate-pulse">⏰ Oferta termina em breve</span>
               </div>
 
               <div className="h-px bg-white/[0.08] my-4" />
