@@ -39,7 +39,7 @@ const LandingPage = () => {
           {/* Main Panel */}
           <div className="border border-white/[0.08] rounded-[18px] bg-[#111826]/65 backdrop-blur-xl shadow-[0_12px_30px_rgba(0,0,0,.35)] p-6">
             <h1 className="text-[clamp(28px,3.4vw,44px)] leading-[1.15] tracking-tight font-bold mb-2.5">
-              Pára de adiar a tua Monografia.<br/>
+              Para de adiar a tua Monografia.<br/>
               Conclui em até 30 dias com um método simples e prático.
             </h1>
             
@@ -90,7 +90,7 @@ const LandingPage = () => {
 
           {/* Side Panel */}
           <div className="border border-white/[0.08] rounded-[18px] bg-[#111826]/65 backdrop-blur-xl shadow-[0_12px_30px_rgba(0,0,0,.35)] p-6">
-            <h2 className="text-lg tracking-tight font-bold mb-2.5">Se identificas com isto, estás no lugar certo</h2>
+            <h2 className="text-lg tracking-tight font-bold mb-2.5">Se identificas-te com isto, estás no lugar certo</h2>
             
             <ul className="space-y-2.5 mb-4">
               {[
@@ -108,7 +108,7 @@ const LandingPage = () => {
 
             <div className="h-px bg-white/[0.08] my-4" />
 
-            <h3 className="font-bold mb-2">A sequência do curso (sem videoaulas)</h3>
+            <h3 className="font-bold mb-2">A sequência do curso</h3>
             <ul className="space-y-2.5">
               {[
                 { num: 1, text: "Conteúdo super resumido — só o essencial." },
@@ -221,7 +221,7 @@ const LandingPage = () => {
               <div className="h-px bg-white/[0.08] my-4" />
 
               <div className="flex flex-wrap gap-2.5 items-baseline">
-                <span className="text-white/55 font-extrabold line-through">5.000 MT</span>
+                <span className="text-white/55 font-extrabold line-through">8.000 MT</span>
                 <span className="text-[34px] font-black tracking-tight">3.499 MT</span>
               </div>
               
