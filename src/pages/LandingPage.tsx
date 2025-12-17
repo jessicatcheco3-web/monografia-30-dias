@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const LandingPage = () => {
-  const whatsappLink = "https://chat.whatsapp.com/IGN7NGZRZyoKHThCFmBxzO";
+  const whatsappLink = "https://chat.whatsapp.com/GJ5H91Kc2wW0Gnb8YrZIHW";
 
   return (
     <div className="min-h-screen bg-[#0b0f14] text-[#e6edf6]" style={{
