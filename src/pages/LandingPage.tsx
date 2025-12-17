@@ -11,7 +11,8 @@ const LandingPage = () => {
     }}>
       <div className="max-w-[1080px] mx-auto px-4 py-7">
         {/* Topbar */}
-        <header className="flex items-center justify-between gap-3 px-4 py-3.5 border border-white/[0.08] rounded-full bg-[#111826]/65 backdrop-blur-xl">
+        {/* Desktop Header */}
+        <header className="hidden sm:flex items-center justify-between gap-3 px-4 py-3.5 border border-white/[0.08] rounded-full bg-[#111826]/65 backdrop-blur-xl">
           <div className="flex flex-col gap-0.5 font-bold tracking-wide">
             <span>UFUTURO LICENCIADO</span>
             <small className="text-[#a7b4c8] font-semibold text-sm">Curso prático • Monografia em até 30 dias</small>
@@ -19,7 +20,7 @@ const LandingPage = () => {
           <div className="flex items-center gap-2">
             <Link 
               to="/login"
-              className="hidden sm:inline-flex items-center justify-center px-4 py-3 rounded-full bg-transparent text-[#e6edf6] font-extrabold border border-white/[0.08] hover:bg-white/5 transition-all whitespace-nowrap"
+              className="inline-flex items-center justify-center px-4 py-3 rounded-full bg-transparent text-[#e6edf6] font-extrabold border border-white/[0.08] hover:bg-white/5 transition-all whitespace-nowrap"
             >
               Já sou estudante
             </Link>
@@ -27,10 +28,34 @@ const LandingPage = () => {
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:inline-flex items-center justify-center px-4 py-3 rounded-full bg-[#26d07c] text-[#042012] font-extrabold border border-black/25 hover:bg-[#21b86e] active:translate-y-px transition-all whitespace-nowrap"
+              className="inline-flex items-center justify-center px-4 py-3 rounded-full bg-[#26d07c] text-[#042012] font-extrabold border border-black/25 hover:bg-[#21b86e] active:translate-y-px transition-all whitespace-nowrap"
             >
               Entrar na Lista de Espera
             </a>
+          </div>
+        </header>
+
+        {/* Mobile Header */}
+        <header className="sm:hidden border border-white/[0.08] rounded-[18px] bg-[#111826]/65 backdrop-blur-xl p-4">
+          <div className="flex flex-col gap-0.5 font-bold tracking-wide mb-3">
+            <span>UFUTURO LICENCIADO</span>
+            <small className="text-[#a7b4c8] font-semibold text-sm">Curso prático • Monografia em até 30 dias</small>
+          </div>
+          <div className="flex flex-col gap-2">
+            <a 
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-4 py-3 rounded-full bg-[#26d07c] text-[#042012] font-extrabold border border-black/25 hover:bg-[#21b86e] active:translate-y-px transition-all text-center"
+            >
+              Entrar na Lista de Espera
+            </a>
+            <Link 
+              to="/login"
+              className="inline-flex items-center justify-center px-4 py-3 rounded-full bg-transparent text-[#e6edf6] font-extrabold border border-white/[0.08] hover:bg-white/5 transition-all text-center"
+            >
+              Já sou estudante
+            </Link>
           </div>
         </header>
 
