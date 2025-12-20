@@ -244,7 +244,7 @@ const LandingPage = () => {
                   <span className="w-2 h-2 bg-[#ff4d4d] rounded-full animate-pulse" />
                   <span className="text-[#ff4d4d] font-bold text-sm">⚠️ APENAS 23 VAGAS RESTANTES</span>
                 </div>
-                <p className="text-[#a7b4c8] text-xs">O preço volta para 8.000 MT quando as vagas acabarem.</p>
+                <p className="text-[#a7b4c8] text-xs">O preço volta para MZN 3.500,00 quando as vagas acabarem.</p>
               </div>
 
               <div className="flex flex-wrap gap-2.5 mb-4">
@@ -255,8 +255,8 @@ const LandingPage = () => {
               <div className="h-px bg-white/[0.08] my-4" />
 
               <div className="flex flex-wrap gap-2.5 items-baseline">
-                <span className="text-white/55 font-extrabold line-through">8.000 MT</span>
-                <span className="text-[34px] font-black tracking-tight">3.499 MT</span>
+                <span className="text-white/55 font-extrabold line-through">MZN 3.500,00</span>
+                <span className="text-[34px] font-black tracking-tight">MZN 1.499,00</span>
               </div>
               
               <p className="text-[#a7b4c8] my-4">
